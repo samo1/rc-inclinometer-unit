@@ -17,6 +17,7 @@
 #include <Arduino.h>
 #include <Arduino_LSM9DS1.h>
 #include <ArduinoBLE.h>
+#include "pitches.h"
 
 const int maxPitchRollCharSize = 32;
 
@@ -31,6 +32,13 @@ const float alpha = 0.5;
 double fXg = 0;
 double fYg = 0;
 double fZg = 0;
+
+void introSound()
+{
+  tone(D3, NOTE_C4, 250);
+  delay(300);
+  noTone(D3);
+}
 
 void setup()
 {
@@ -66,6 +74,8 @@ void setup()
 
   BLE.advertise();
   DEBUG_PRINTLN("Bluetooth device active, waiting for connections...");
+
+  introSound();
 }
 
 void updatePitchRoll(bool connected)
