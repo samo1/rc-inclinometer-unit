@@ -17,12 +17,15 @@
 #include <Arduino.h>
 #include <Arduino_LSM9DS1.h>
 #include <ArduinoBLE.h>
+#include <Servo.h>
 #include "pitches.h"
 
 const int maxPitchRollCharSize = 32;
+const int maxWinchControlCharSize = 32;
 
 BLEService infoService("be75903a-14b3-11ec-a7df-e069953c4ba2");
 BLEStringCharacteristic pitchRollChar("d6c77054-14b3-11ec-b16c-e069953c4ba2", BLERead | BLENotify, maxPitchRollCharSize);
+BLEStringCharacteristic winchControlChar("4eae0d40-699f-11ec-b55b-e069953c4ba2", BLEWrite, maxWinchControlCharSize);
 
 String previousPitchRoll = "0:0";
 long previousMillis = 0;
@@ -33,11 +36,28 @@ double fXg = 0;
 double fYg = 0;
 double fZg = 0;
 
+Servo winch;
+
 void introSound()
 {
   tone(D3, NOTE_C4, 250);
   delay(300);
   noTone(D3);
+}
+
+void winchStop() {
+  DEBUG_PRINTLN("Winch stop");
+  winch.write(0);
+}
+
+void winchIn() {
+  DEBUG_PRINTLN("Winch in");
+  winch.write(45);
+}
+
+void winchOut() {
+  DEBUG_PRINTLN("Winch out");
+  winch.write(135);
 }
 
 void setup()
@@ -69,8 +89,12 @@ void setup()
   BLE.setLocalName("RC-inclinometer");
   BLE.setAdvertisedService(infoService);
   infoService.addCharacteristic(pitchRollChar);
+  infoService.addCharacteristic(winchControlChar);
   BLE.addService(infoService);
   pitchRollChar.writeValue(previousPitchRoll);
+
+  DEBUG_PRINTLN("Attaching winch control on D9");
+  winch.attach(D9);
 
   BLE.advertise();
   DEBUG_PRINTLN("Bluetooth device active, waiting for connections...");
@@ -149,6 +173,17 @@ void loop()
       {
         previousMillis = currentMillis;
         updatePitchRoll(true);
+      }
+
+      if (winchControlChar.written()) {
+        String controlString = winchControlChar.value();
+        if (controlString.equalsIgnoreCase("stop")) {
+          winchStop();
+        } else if (controlString.equalsIgnoreCase("in")) {
+          winchIn();
+        } else if (controlString.equalsIgnoreCase("out")) {
+          winchOut();
+        }
       }
     }
 
