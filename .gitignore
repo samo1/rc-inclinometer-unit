@@ -3,6 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+/.idea/
 /cmake-build-debug/
 /cmake-build-nano33ble/
 /CMakeLists.txt

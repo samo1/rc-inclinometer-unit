@@ -1,15 +1,27 @@
 #include <Arduino.h>
 #include "receiver.h"
 
+volatile unsigned long pulseBegin = micros();
+volatile unsigned long pulseEnd = micros();
+volatile unsigned long pulseDuration = 0;
+
+void receiverPinInterrupt() {
+    if (digitalRead(D5) == HIGH) {
+        pulseBegin = micros();
+    } else {
+        pulseEnd = micros();
+        pulseDuration = pulseEnd - pulseBegin;
+    }
+}
+
 void Receiver::initialize() {
     pinMode(D5, INPUT);
+    attachInterrupt(digitalPinToInterrupt(D5), receiverPinInterrupt, CHANGE);
 }
 
 unsigned long Receiver::readValue() {
-    unsigned long duration = pulseIn(D5, HIGH);
-
-    DEBUG_PRINT("Receiver value = ");
-    DEBUG_PRINTLN(duration);
+    //DEBUG_PRINT("Receiver value = ");
+    //DEBUG_PRINTLN(pulseDuration);
 
     // old (dig):
     // Receiver value = 1224
@@ -23,5 +35,5 @@ unsigned long Receiver::readValue() {
     // 1836 - up
     // 1249 - down
 
-    return duration;
+    return pulseDuration;
 }

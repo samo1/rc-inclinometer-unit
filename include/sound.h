@@ -1,9 +1,6 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-#define _TASK_SLEEP_ON_IDLE_RUN
-#define _TASK_STATUS_REQUEST
-#define _TASK_TIMEOUT
 #define _TASK_OO_CALLBACKS
 
 #include <TaskSchedulerDeclarations.h>
