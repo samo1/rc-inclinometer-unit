@@ -39,14 +39,21 @@ void updateInclineData() {
     }
 }
 
-void updateWinchControl() {
-    String controlString = bluetooth.getWinchControlString();
-    if (controlString.equalsIgnoreCase("stop")) {
+void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
+    if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();
-    } else if (controlString.equalsIgnoreCase("in")) {
+    } else if (receiverCommand == ReceiverCommand::winchIn) {
         winch.in();
-    } else if (controlString.equalsIgnoreCase("out")) {
+    } else if (receiverCommand == ReceiverCommand::winchOut) {
         winch.out();
+    } else {
+        if (controlString.equalsIgnoreCase("stop")) {
+            winch.stop();
+        } else if (controlString.equalsIgnoreCase("in")) {
+            winch.in();
+        } else if (controlString.equalsIgnoreCase("out")) {
+            winch.out();
+        }
     }
 }
 
@@ -56,10 +63,9 @@ public:
     bool Callback() override {
         bluetooth.checkConnection();
         updateInclineData();
-        updateWinchControl();
-
-        unsigned long receiverValue = receiver.readValue();
-
+        String controlString = bluetooth.getWinchControlString();
+        ReceiverCommand receiverCommand = receiver.readCommand();
+        updateWinchControl(controlString, receiverCommand);
         return false;
     }
 };
@@ -69,7 +75,7 @@ MainTask mainTask(&scheduler);
 void setup() {
     DEBUG_INIT;
     incline.initialize();
-    receiver.initialize();
+    Receiver::initialize();
     winch.initialize();
     bluetooth.initialize();
     sound.initialize();
