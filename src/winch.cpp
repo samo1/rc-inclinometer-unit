@@ -13,10 +13,22 @@ void Winch::stop() {
 
 void Winch::in() {
     DEBUG_PRINTLN("Winch in");
-    servo.write(45);
+    if (enabled) {
+        servo.write(45);
+    }
 }
 
 void Winch::out() {
     DEBUG_PRINTLN("Winch out");
-    servo.write(135);
+    if (enabled) {
+        servo.write(135);
+    }
+}
+
+void Winch::enable() {
+    enabled = true;
+}
+
+void Winch::disable() {
+    enabled = false;
 }

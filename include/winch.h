@@ -10,9 +10,12 @@ public:
     void stop();
     void in();
     void out();
+    void enable();
+    void disable();
 
 private:
     Servo servo;
+    bool enabled = false;
 };
 
 #endif // WINCH_H

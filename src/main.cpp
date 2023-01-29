@@ -1,6 +1,7 @@
 #define _TASK_OO_CALLBACKS
 
 #include <TaskScheduler.h>
+#include <ezButton.h>
 
 #include "bluetooth.h"
 #include "debug.h"
@@ -15,6 +16,7 @@ Incline incline;
 Receiver receiver;
 Sound sound(&scheduler);
 Winch winch;
+ezButton toggleSwitch(D2);
 
 void updateInclineData() {
     PitchRoll pitchRoll = incline.read();
@@ -74,6 +76,7 @@ MainTask mainTask(&scheduler);
 
 void setup() {
     DEBUG_INIT;
+    toggleSwitch.setDebounceTime(50);
     incline.initialize();
     Receiver::initialize();
     winch.initialize();
@@ -84,4 +87,13 @@ void setup() {
 
 void loop() {
     scheduler.execute();
+    toggleSwitch.loop();
+    if (toggleSwitch.isPressed()) {
+        DEBUG_PRINTLN("The switch: OFF -> ON");
+        winch.enable();
+    }
+    if (toggleSwitch.isReleased()) {
+        DEBUG_PRINTLN("The switch: ON -> OFF");
+        winch.disable();
+    }
 }
