@@ -9,7 +9,7 @@ public:
     PitchRoll read();
 
 private:
-    const float alpha = 0.5;
+    const double alpha = 0.5;
     double fXg = 0;
     double fYg = 0;
     double fZg = 0;

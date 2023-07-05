@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "pitchroll.h"
 
-PitchRoll::PitchRoll(bool v, float p, float r) : valid(v), pitch(p), roll(r) {}
+PitchRoll::PitchRoll(bool v, double p, double r) : valid(v), pitch(p), roll(r) {}
 
 String PitchRoll::toString() const {
     String s = "";

@@ -6,12 +6,13 @@
 void Incline::initialize() {
     if (!IMU.begin()) {
         DEBUG_PRINTLN("Failed to initialize IMU!");
-        while (1);
+        while (true);
     }
 }
 
 PitchRoll Incline::read() {
-    float pitch, roll, Xg, Yg, Zg;
+    double pitch, roll;
+    float Xg, Yg, Zg;
     if (IMU.accelerationAvailable()) {
         IMU.readAcceleration(Xg, Yg, Zg);
 
@@ -27,7 +28,7 @@ PitchRoll Incline::read() {
         PitchRoll pitchRoll(true, pitch, roll);
         return pitchRoll;
     } else {
-        PitchRoll pitchRoll(false, 0.0f, 0.0f);
+        PitchRoll pitchRoll(false, 0.0, 0.0);
         return pitchRoll;
     }
 }

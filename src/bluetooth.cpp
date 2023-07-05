@@ -6,7 +6,7 @@ void Bluetooth::initialize() {
 
     if (!BLE.begin()) {
         DEBUG_PRINTLN("starting BLE failed!");
-        while (1);
+        while (true);
     }
 
     BLE.setLocalName("RC-inclinometer");

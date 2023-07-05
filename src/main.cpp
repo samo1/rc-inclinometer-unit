@@ -59,6 +59,18 @@ void updateWinchControl(const String& controlString, ReceiverCommand receiverCom
     }
 }
 
+void handleToggleSwitch() {
+    toggleSwitch.loop();
+    if (toggleSwitch.isPressed()) {
+        DEBUG_PRINTLN("The switch: OFF -> ON");
+        winch.enable();
+    }
+    if (toggleSwitch.isReleased()) {
+        DEBUG_PRINTLN("The switch: ON -> OFF");
+        winch.disable();
+    }
+}
+
 class MainTask : public Task {
 public:
     explicit MainTask(Scheduler* s) : Task(100, TASK_FOREVER, s, false) {}
@@ -87,13 +99,5 @@ void setup() {
 
 void loop() {
     scheduler.execute();
-    toggleSwitch.loop();
-    if (toggleSwitch.isPressed()) {
-        DEBUG_PRINTLN("The switch: OFF -> ON");
-        winch.enable();
-    }
-    if (toggleSwitch.isReleased()) {
-        DEBUG_PRINTLN("The switch: ON -> OFF");
-        winch.disable();
-    }
+    handleToggleSwitch();
 }

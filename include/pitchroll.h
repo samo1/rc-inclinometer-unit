@@ -4,10 +4,10 @@
 class PitchRoll {
 public:
     bool valid;
-    float pitch;
-    float roll;
+    double pitch;
+    double roll;
 
-    PitchRoll(bool valid, float p, float r);
+    PitchRoll(bool valid, double p, double r);
     String toString() const;
 };
 
