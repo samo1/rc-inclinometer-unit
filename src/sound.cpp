@@ -40,7 +40,7 @@ bool Sound::Callback() {
             noTone(BUZZER_PIN);
             setInterval(SOUND_TASK_INTERVAL);
     }
-    return false;
+    return true;
 }
 
 void Sound::rollWarning1() {

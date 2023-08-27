@@ -1,5 +1,3 @@
-#define _TASK_OO_CALLBACKS
-
 #include <TaskScheduler.h>
 #include <ezButton.h>
 
@@ -80,7 +78,7 @@ public:
         String controlString = bluetooth.getWinchControlString();
         ReceiverCommand receiverCommand = receiver.readCommand();
         updateWinchControl(controlString, receiverCommand);
-        return false;
+        return true;
     }
 };
 

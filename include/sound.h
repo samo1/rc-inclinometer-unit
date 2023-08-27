@@ -1,8 +1,6 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-#define _TASK_OO_CALLBACKS
-
 #include <TaskSchedulerDeclarations.h>
 #include "debug.h"
 #include "notes.h"
