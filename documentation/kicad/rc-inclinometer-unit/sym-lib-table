@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "rc-inclinometer-unit-rescue")(type "Legacy")(uri "${KIPRJMOD}/rc-inclinometer-unit-rescue.lib")(options "")(descr ""))
+  (lib (name "rc-inclinometer-unit-custom-library")(type "KiCad")(uri "${KIPRJMOD}/rc-inclinometer-unit-custom-library.kicad_sym")(options "")(descr ""))
 )
