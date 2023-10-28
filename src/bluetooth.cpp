@@ -12,9 +12,12 @@ void Bluetooth::initialize() {
     BLE.setLocalName("RC-inclinometer");
     BLE.setAdvertisedService(infoService);
     infoService.addCharacteristic(pitchRollChar);
+    infoService.addCharacteristic(winchInfoChar);
     infoService.addCharacteristic(winchControlChar);
     BLE.addService(infoService);
     pitchRollChar.writeValue(previousPitchRoll);
+    String initialWinchInfo("DS");
+    winchInfoChar.writeValue(initialWinchInfo);
 
     BLE.advertise();
     DEBUG_PRINTLN("Bluetooth device active, waiting for connections...");
@@ -49,6 +52,13 @@ void Bluetooth::updatePitchRoll(PitchRoll pitchRoll) {
         if (connected) {
             pitchRollChar.writeValue(currentPitchRoll.substring(0, maxPitchRollCharSize - 1));
         }
+    }
+}
+
+void Bluetooth::updateWinchInfo(const String& winchInfo) {
+    if (connected) {
+        DEBUG_PRINTLN(winchInfo);
+        winchInfoChar.writeValue(winchInfo.substring(0, maxWinchInfoCharSize - 1));
     }
 }
 

@@ -16,7 +16,7 @@ Sound sound(&scheduler);
 Winch winch;
 ezButton toggleSwitch(D2);
 
-void updateInclineData() {
+static void updateInclineData() {
     PitchRoll pitchRoll = incline.read();
     if (pitchRoll.valid) {
         bluetooth.updatePitchRoll(pitchRoll);
@@ -39,7 +39,15 @@ void updateInclineData() {
     }
 }
 
-void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
+static void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
+    String oldInfo = winch.getInfo();
+    if (controlString.equalsIgnoreCase("enable")) {
+        winch.enable();
+    } else if (controlString.equalsIgnoreCase("disable")) {
+        winch.disable();
+    } else if (controlString.equalsIgnoreCase("info")) {
+        bluetooth.updateWinchInfo(oldInfo);
+    }
     if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();
     } else if (receiverCommand == ReceiverCommand::winchIn) {
@@ -55,10 +63,15 @@ void updateWinchControl(const String& controlString, ReceiverCommand receiverCom
             winch.out();
         }
     }
+    String newInfo = winch.getInfo();
+    if (oldInfo != newInfo) {
+        bluetooth.updateWinchInfo(newInfo);
+    }
 }
 
-void handleToggleSwitch() {
+static void handleToggleSwitch() {
     toggleSwitch.loop();
+    String oldInfo = winch.getInfo();
     if (toggleSwitch.isPressed()) {
         DEBUG_PRINTLN("The switch: OFF -> ON");
         winch.enable();
@@ -66,6 +79,10 @@ void handleToggleSwitch() {
     if (toggleSwitch.isReleased()) {
         DEBUG_PRINTLN("The switch: ON -> OFF");
         winch.disable();
+    }
+    String newInfo = winch.getInfo();
+    if (oldInfo != newInfo) {
+        bluetooth.updateWinchInfo(newInfo);
     }
 }
 

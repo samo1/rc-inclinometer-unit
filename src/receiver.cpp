@@ -5,7 +5,7 @@ volatile unsigned long pulseBegin = micros();
 volatile unsigned long pulseEnd = micros();
 volatile unsigned long pulseDuration = 0;
 
-void receiverPinInterrupt() {
+static void receiverPinInterrupt() {
     if (digitalRead(D5) == HIGH) {
         pulseBegin = micros();
     } else {
