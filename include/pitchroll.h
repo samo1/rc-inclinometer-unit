@@ -1,5 +1,4 @@
-#ifndef PITCHROLL_H
-#define PITCHROLL_H
+#pragma once
 
 class PitchRoll {
 public:
@@ -10,5 +9,3 @@ public:
     PitchRoll(bool valid, double p, double r);
     String toString() const;
 };
-
-#endif // PITCHROLL_H

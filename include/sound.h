@@ -1,5 +1,4 @@
-#ifndef SOUND_H
-#define SOUND_H
+#pragma once
 
 #include <TaskSchedulerDeclarations.h>
 #include "debug.h"
@@ -48,5 +47,3 @@ private:
     CurrenMelodyState currentMelody{};
     void setCurrentMelody(const int* melody, size_t size);
 };
-
-#endif // SOUND_H

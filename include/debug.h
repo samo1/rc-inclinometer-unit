@@ -1,5 +1,4 @@
-#ifndef DEBUG_H
-#define DEBUG_H
+#pragma once
 
 //#define DEBUG
 
@@ -12,5 +11,3 @@
 #define DEBUG_PRINT(x) do {} while (0)
 #define DEBUG_PRINTLN(x) do {} while (0)
 #endif
-
-#endif // DEBUG_H

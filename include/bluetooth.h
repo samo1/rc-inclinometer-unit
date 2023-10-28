@@ -1,5 +1,4 @@
-#ifndef BLUETOOTH_H
-#define BLUETOOTH_H
+#pragma once
 
 #include <Arduino.h>
 #include <ArduinoBLE.h>
@@ -32,5 +31,3 @@ private:
     bool connected;
     String previousPitchRoll;
 };
-
-#endif // BLUETOOTH_H

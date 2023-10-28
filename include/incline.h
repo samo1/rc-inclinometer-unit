@@ -1,5 +1,4 @@
-#ifndef INCLINE_H
-#define INCLINE_H
+#pragma once
 
 #include "pitchroll.h"
 
@@ -14,5 +13,3 @@ private:
     double fYg = 0;
     double fZg = 0;
 };
-
-#endif // INCLINE_H

@@ -1,5 +1,4 @@
-#ifndef WINCH_H
-#define WINCH_H
+#pragma once
 
 #include <Arduino.h>
 #include <Servo.h>
@@ -21,5 +20,3 @@ private:
     // second char S = stopped, I = winching in, O = winching out
     String info = String("DS");
 };
-
-#endif // WINCH_H

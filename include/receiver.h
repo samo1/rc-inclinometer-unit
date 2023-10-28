@@ -1,5 +1,4 @@
-#ifndef RECEIVER_H
-#define RECEIVER_H
+#pragma once
 
 #include "debug.h"
 
@@ -20,5 +19,3 @@ private:
     ReceiverState state = ReceiverState::winchStopped;
     static SwitchPosition readSwitchPosition();
 };
-
-#endif // RECEIVER_H
