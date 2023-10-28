@@ -3,6 +3,7 @@
 
 #include "bluetooth.h"
 #include "debug.h"
+#include "dig.h"
 #include "incline.h"
 #include "receiver.h"
 #include "sound.h"
@@ -10,10 +11,12 @@
 
 Scheduler scheduler;
 Bluetooth bluetooth;
+StatusInfo statusInfo;
+Dig dig(&scheduler, statusInfo);
 Incline incline;
 Receiver receiver;
 Sound sound(&scheduler);
-Winch winch;
+Winch winch(statusInfo);
 ezButton toggleSwitch(D2);
 
 static void updateInclineData() {
@@ -40,13 +43,14 @@ static void updateInclineData() {
 }
 
 static void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
-    String oldInfo = winch.getInfo();
     if (controlString.equalsIgnoreCase("enable")) {
         winch.enable();
     } else if (controlString.equalsIgnoreCase("disable")) {
         winch.disable();
-    } else if (controlString.equalsIgnoreCase("info")) {
-        bluetooth.updateWinchInfo(oldInfo);
+    } else if (controlString.equalsIgnoreCase("dig_enable")) {
+        dig.enableFrontDig();
+    } else if (controlString.equalsIgnoreCase("dig_disable")) {
+        dig.disableFrontDig();
     }
     if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();
@@ -63,15 +67,13 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
             winch.out();
         }
     }
-    String newInfo = winch.getInfo();
-    if (oldInfo != newInfo) {
-        bluetooth.updateWinchInfo(newInfo);
+    if (statusInfo.isChanged()) {
+        bluetooth.updateWinchInfo(statusInfo.getInfo());
     }
 }
 
 static void handleToggleSwitch() {
     toggleSwitch.loop();
-    String oldInfo = winch.getInfo();
     if (toggleSwitch.isPressed()) {
         DEBUG_PRINTLN("The switch: OFF -> ON");
         winch.enable();
@@ -80,9 +82,8 @@ static void handleToggleSwitch() {
         DEBUG_PRINTLN("The switch: ON -> OFF");
         winch.disable();
     }
-    String newInfo = winch.getInfo();
-    if (oldInfo != newInfo) {
-        bluetooth.updateWinchInfo(newInfo);
+    if (statusInfo.isChanged()) {
+        bluetooth.updateWinchInfo(statusInfo.getInfo());
     }
 }
 
@@ -104,6 +105,7 @@ MainTask mainTask(&scheduler);
 void setup() {
     DEBUG_INIT;
     toggleSwitch.setDebounceTime(50);
+    dig.initialize();
     incline.initialize();
     Receiver::initialize();
     winch.initialize();
