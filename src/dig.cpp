@@ -26,6 +26,7 @@ void Dig::disableFrontDig() {
 }
 
 bool DigDisableTask::Callback() {
+    DEBUG_PRINTLN("Disable front dig (step 2)");
     dig->servo.write(FRONT_DIG_OFF_2);
     dig->statusInfo.digDisabled();
     return true;

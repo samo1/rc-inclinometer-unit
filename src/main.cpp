@@ -43,6 +43,11 @@ static void updateInclineData() {
 }
 
 static void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
+    if (controlString != "") {
+        DEBUG_PRINT("BLE command '");
+        DEBUG_PRINT(controlString);
+        DEBUG_PRINTLN("'");
+    }
     if (controlString.equalsIgnoreCase("enable")) {
         winch.enable();
     } else if (controlString.equalsIgnoreCase("disable")) {
