@@ -17,5 +17,5 @@ public:
 private:
     Servo servo;
     bool enabled = false;
-    StatusInfo statusInfo;
+    StatusInfo& statusInfo;
 };

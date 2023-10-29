@@ -1,5 +1,6 @@
 #include "bluetooth.h"
 #include "debug.h"
+#include "statusinfo.h"
 
 void Bluetooth::initialize() {
     pinMode(LED_BUILTIN, OUTPUT);
@@ -16,7 +17,7 @@ void Bluetooth::initialize() {
     infoService.addCharacteristic(winchControlChar);
     BLE.addService(infoService);
     pitchRollChar.writeValue(previousPitchRoll);
-    String initialWinchInfo("DS");
+    String initialWinchInfo(INITIAL_STATUS_INFO);
     winchInfoChar.writeValue(initialWinchInfo);
 
     BLE.advertise();

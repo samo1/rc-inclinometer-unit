@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 
+#define INITIAL_STATUS_INFO "DSD"
+
 class StatusInfo {
 public:
     void winchEnabled();
@@ -18,6 +20,6 @@ private:
     // first char E = winch enabled, D = winch disabled
     // second char S = winch stopped, I = winching in, O = winching out
     // second char E = front dig enabled, D = front dig disabled
-    String info = String("DSD");
-    String previousInfo = String("DSD");
+    String info = String(INITIAL_STATUS_INFO);
+    String previousInfo = String(INITIAL_STATUS_INFO);
 };

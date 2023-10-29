@@ -68,6 +68,7 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
         }
     }
     if (statusInfo.isChanged()) {
+        DEBUG_PRINTLN("Status changed");
         bluetooth.updateWinchInfo(statusInfo.getInfo());
     }
 }
@@ -83,6 +84,7 @@ static void handleToggleSwitch() {
         winch.disable();
     }
     if (statusInfo.isChanged()) {
+        DEBUG_PRINTLN("Status changed");
         bluetooth.updateWinchInfo(statusInfo.getInfo());
     }
 }

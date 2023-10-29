@@ -28,5 +28,5 @@ public:
 private:
     Servo servo;
     DigDisableTask digDisableTask;
-    StatusInfo statusInfo;
+    StatusInfo& statusInfo;
 };
