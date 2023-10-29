@@ -36,6 +36,7 @@ void Winch::enable() {
 }
 
 void Winch::disable() {
+    stop();
     enabled = false;
     statusInfo.winchDisabled();
 }
