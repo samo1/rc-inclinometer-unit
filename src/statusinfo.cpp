@@ -34,5 +34,5 @@ String StatusInfo::getInfo() {
 }
 
 bool StatusInfo::isChanged() {
-    return info == previousInfo;
+    return info != previousInfo;
 }
