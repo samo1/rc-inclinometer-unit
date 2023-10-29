@@ -31,11 +31,13 @@ void Winch::out() {
 }
 
 void Winch::enable() {
+    DEBUG_PRINTLN("Winch enable");
     enabled = true;
     statusInfo.winchEnabled();
 }
 
 void Winch::disable() {
+    DEBUG_PRINTLN("Winch disable");
     stop();
     enabled = false;
     statusInfo.winchDisabled();

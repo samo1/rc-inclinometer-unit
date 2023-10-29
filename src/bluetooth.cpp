@@ -58,8 +58,10 @@ void Bluetooth::updatePitchRoll(PitchRoll pitchRoll) {
 
 void Bluetooth::updateWinchInfo(const String& winchInfo) {
     if (connected) {
-        DEBUG_PRINTLN(winchInfo);
-        winchInfoChar.writeValue(winchInfo.substring(0, maxWinchInfoCharSize - 1));
+        String message = winchInfo.substring(0, maxWinchInfoCharSize - 1);
+        DEBUG_PRINT("Sending winch info: ");
+        DEBUG_PRINTLN(message);
+        winchInfoChar.writeValue(message);
     }
 }
 
