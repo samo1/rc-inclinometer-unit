@@ -7,6 +7,7 @@
 #include "incline.h"
 #include "receiver.h"
 #include "sound.h"
+#include "speed.h"
 #include "winch.h"
 
 Scheduler scheduler;
@@ -103,6 +104,7 @@ public:
         String controlString = bluetooth.getWinchControlString();
         ReceiverCommand receiverCommand = receiver.readCommand();
         updateWinchControl(controlString, receiverCommand);
+        bluetooth.updateSpeed(Speed::getSpeed(), Speed::getTickNr());
         return true;
     }
 };
@@ -115,6 +117,7 @@ void setup() {
     dig.initialize();
     incline.initialize();
     Receiver::initialize();
+    Speed::initialize();
     winch.initialize();
     bluetooth.initialize();
     sound.initialize();

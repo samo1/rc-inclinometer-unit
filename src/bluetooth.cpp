@@ -15,10 +15,12 @@ void Bluetooth::initialize() {
     infoService.addCharacteristic(pitchRollChar);
     infoService.addCharacteristic(winchInfoChar);
     infoService.addCharacteristic(winchControlChar);
+    infoService.addCharacteristic(speedChar);
     BLE.addService(infoService);
     pitchRollChar.writeValue(previousPitchRoll);
     String initialWinchInfo(INITIAL_STATUS_INFO);
     winchInfoChar.writeValue(initialWinchInfo);
+    speedChar.writeValue(previousSpeed);
 
     BLE.advertise();
     DEBUG_PRINTLN("Bluetooth device active, waiting for connections...");
@@ -72,5 +74,16 @@ String Bluetooth::getWinchControlString() {
     } else {
         String controlString = "";
         return controlString;
+    }
+}
+
+void Bluetooth::updateSpeed(double speed, unsigned long tickNr) {
+    String currentSpeed = String(speed, 2) + String(";") + String(tickNr);
+    if (currentSpeed.compareTo(previousSpeed) != 0) {
+        previousSpeed = currentSpeed;
+        DEBUG_PRINTLN(currentSpeed);
+        if (connected) {
+            speedChar.writeValue(currentSpeed.substring(0, maxSpeedCharSize - 1));
+        }
     }
 }
