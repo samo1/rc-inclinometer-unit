@@ -77,8 +77,8 @@ String Bluetooth::getWinchControlString() {
     }
 }
 
-void Bluetooth::updateSpeed(double speed, unsigned long tickNr) {
-    String currentSpeed = String(speed, 2) + String(";") + String(tickNr);
+void Bluetooth::updateSpeed(double speed, double distance, unsigned long tickNr) {
+    String currentSpeed = String(speed, 3) + String(";") + String(tickNr) + String(";") + String(distance, 3);
     if (currentSpeed.compareTo(previousSpeed) != 0) {
         previousSpeed = currentSpeed;
         DEBUG_PRINTLN(currentSpeed);

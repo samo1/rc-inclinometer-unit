@@ -4,15 +4,16 @@
 #define HALL_SENSOR_DOUT D10
 #define HALL_SENSOR_AOUT PIN_A0
 
-#define MM_DISTANCE_PER_REVOLUTION (double) 10.0
+#define MM_DISTANCE_PER_REVOLUTION 49.0
 
 volatile unsigned long tickNr;
 volatile unsigned long tickTime;
 volatile unsigned long lastTimeDiff;
 volatile double speed;
 
-double calculateSpeed(unsigned long timeDiff) {
-    return (double) 3600.0 * MM_DISTANCE_PER_REVOLUTION / (double) timeDiff;
+double calculateSpeedKmh(unsigned long timeDiffMicros) {
+    // mm / us ... (mm / 1e6) km / (us / (60 * 60 * 1e6)) h
+    return 3600.0 * MM_DISTANCE_PER_REVOLUTION / (double) timeDiffMicros;
 }
 
 void onTick() {
@@ -20,7 +21,7 @@ void onTick() {
     auto oldTickTime = tickTime;
     tickTime = micros();
     lastTimeDiff = tickTime - oldTickTime;
-    speed = calculateSpeed(lastTimeDiff);
+    speed = calculateSpeedKmh(lastTimeDiff);
 }
 
 void Speed::initialize() {
@@ -31,12 +32,16 @@ void Speed::initialize() {
     attachInterrupt(digitalPinToInterrupt(HALL_SENSOR_DOUT), onTick, FALLING);
 }
 
-double Speed::getSpeed() {
+double Speed::getSpeedKmh() {
     auto timeDiffToLastTick = micros() - tickTime;
     if (timeDiffToLastTick > lastTimeDiff) {
-        return calculateSpeed(timeDiffToLastTick);
+        return calculateSpeedKmh(timeDiffToLastTick);
     }
     return speed;
+}
+
+double Speed::getDistanceMeters() {
+    return tickNr * MM_DISTANCE_PER_REVOLUTION / 1000.0;
 }
 
 unsigned long Speed::getTickNr() {

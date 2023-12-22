@@ -104,7 +104,7 @@ public:
         String controlString = bluetooth.getWinchControlString();
         ReceiverCommand receiverCommand = receiver.readCommand();
         updateWinchControl(controlString, receiverCommand);
-        bluetooth.updateSpeed(Speed::getSpeed(), Speed::getTickNr());
+        bluetooth.updateSpeed(Speed::getSpeedKmh(), Speed::getDistanceMeters(), Speed::getTickNr());
         return true;
     }
 };

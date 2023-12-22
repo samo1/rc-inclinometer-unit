@@ -19,7 +19,7 @@ public:
     void checkConnection();
     void updatePitchRoll(PitchRoll pitchRoll);
     void updateWinchInfo(const String& winchInfo);
-    void updateSpeed(double speed, unsigned long tickNr);
+    void updateSpeed(double speed, double distance, unsigned long tickNr);
     String getWinchControlString();
 
 private:

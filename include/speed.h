@@ -4,6 +4,7 @@
 class Speed {
 public:
     static void initialize();
-    static double getSpeed();
+    static double getSpeedKmh();
+    static double getDistanceMeters();
     static unsigned long getTickNr();
 };
