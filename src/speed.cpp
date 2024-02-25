@@ -4,7 +4,7 @@
 #define HALL_SENSOR_DOUT D10
 #define HALL_SENSOR_AOUT PIN_A0
 
-#define MM_DISTANCE_PER_REVOLUTION 49.0
+#define MM_DISTANCE_PER_REVOLUTION 49.5
 
 volatile unsigned long tickNr;
 volatile unsigned long tickTime;
