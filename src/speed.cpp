@@ -1,4 +1,5 @@
 #include "speed.h"
+#include "preferences.h"
 #include <Arduino.h>
 
 #define HALL_SENSOR_DOUT D10
@@ -10,6 +11,9 @@ volatile unsigned long tickNr;
 volatile unsigned long tickTime;
 volatile unsigned long lastTimeDiff;
 volatile double speed;
+
+extern Preferences preferences;
+unsigned long persistedTickNr;
 
 double calculateSpeedKmh(unsigned long timeDiffMicros) {
     // mm / us ... (mm / 1e6) km / (us / (60 * 60 * 1e6)) h
@@ -25,7 +29,8 @@ void onTick() {
 }
 
 void Speed::initialize() {
-    tickNr = 0;
+    persistedTickNr = preferences.readSpeedMeterTickNr();
+    tickNr = persistedTickNr;
     tickTime = micros();
     pinMode(HALL_SENSOR_DOUT, INPUT);
     pinMode(HALL_SENSOR_AOUT, INPUT);
@@ -46,4 +51,18 @@ double Speed::getDistanceMeters() {
 
 unsigned long Speed::getTickNr() {
     return tickNr;
+}
+
+void Speed::persist() {
+    // persist cca every 50m
+    if (tickNr - persistedTickNr > 1000 || tickNr < persistedTickNr) {
+        persistedTickNr = tickNr;
+        preferences.writeSpeedMeterTickNr(persistedTickNr);
+    }
+}
+
+void Speed::reset() {
+    tickNr = 0;
+    persistedTickNr = 0;
+    preferences.writeSpeedMeterTickNr(0);
 }

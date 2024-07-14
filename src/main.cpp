@@ -5,12 +5,14 @@
 #include "debug.h"
 #include "dig.h"
 #include "incline.h"
+#include "preferences.h"
 #include "receiver.h"
 #include "sound.h"
 #include "speed.h"
 #include "winch.h"
 
 Scheduler scheduler;
+Preferences preferences;
 Bluetooth bluetooth;
 StatusInfo statusInfo;
 Dig dig(&scheduler, statusInfo);
@@ -57,6 +59,8 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
         dig.enableFrontDig();
     } else if (controlString.equalsIgnoreCase("dig_disable")) {
         dig.disableFrontDig();
+    } else if (controlString.equalsIgnoreCase("reset_speed")) {
+        Speed::reset();
     }
     if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();
@@ -105,6 +109,7 @@ public:
         ReceiverCommand receiverCommand = receiver.readCommand();
         updateWinchControl(controlString, receiverCommand);
         bluetooth.updateSpeed(Speed::getSpeedKmh(), Speed::getDistanceMeters(), Speed::getTickNr());
+        Speed::persist();
         return true;
     }
 };

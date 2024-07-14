@@ -7,4 +7,6 @@ public:
     static double getSpeedKmh();
     static double getDistanceMeters();
     static unsigned long getTickNr();
+    static void persist();
+    static void reset();
 };
