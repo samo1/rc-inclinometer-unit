@@ -3,7 +3,7 @@
 #include "NanoBLEFlashPrefs.h"
 
 struct PreferencesData {
-    unsigned long speedMeterTickNr;
+    unsigned long totalDistanceMeters;
 };
 
 class Preferences {
@@ -11,6 +11,6 @@ private:
     PreferencesData data{};
     NanoBLEFlashPrefs flashPrefs;
 public:
-    void writeSpeedMeterTickNr(unsigned long value);
-    unsigned long readSpeedMeterTickNr();
+    void writeTotalDistanceMeters(unsigned long value);
+    unsigned long readTotalDistanceMeters();
 };

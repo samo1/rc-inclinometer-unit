@@ -13,7 +13,8 @@ volatile unsigned long lastTimeDiff;
 volatile double speed;
 
 extern Preferences preferences;
-unsigned long persistedTickNr;
+unsigned long persistedTotalDistanceMetersOnStartup;
+unsigned long persistedTotalDistanceMeters;
 
 double calculateSpeedKmh(unsigned long timeDiffMicros) {
     // mm / us ... (mm / 1e6) km / (us / (60 * 60 * 1e6)) h
@@ -29,8 +30,9 @@ void onTick() {
 }
 
 void Speed::initialize() {
-    persistedTickNr = preferences.readSpeedMeterTickNr();
-    tickNr = persistedTickNr;
+    persistedTotalDistanceMetersOnStartup = preferences.readTotalDistanceMeters();
+    persistedTotalDistanceMeters = persistedTotalDistanceMetersOnStartup;
+    tickNr = 0;
     tickTime = micros();
     pinMode(HALL_SENSOR_DOUT, INPUT);
     pinMode(HALL_SENSOR_AOUT, INPUT);
@@ -46,7 +48,8 @@ double Speed::getSpeedKmh() {
 }
 
 double Speed::getDistanceMeters() {
-    return tickNr * MM_DISTANCE_PER_REVOLUTION / 1000.0;
+    double metersFromStartup = tickNr * MM_DISTANCE_PER_REVOLUTION / 1000.0;
+    return metersFromStartup + persistedTotalDistanceMetersOnStartup;
 }
 
 unsigned long Speed::getTickNr() {
@@ -55,14 +58,17 @@ unsigned long Speed::getTickNr() {
 
 void Speed::persist() {
     // persist cca every 50m
-    if (tickNr - persistedTickNr > 1000 || tickNr < persistedTickNr) {
-        persistedTickNr = tickNr;
-        preferences.writeSpeedMeterTickNr(persistedTickNr);
+    double distanceMeters = getDistanceMeters();
+    if (distanceMeters - persistedTotalDistanceMeters > 50) {
+        persistedTotalDistanceMeters = static_cast<long>(distanceMeters);
+        preferences.writeTotalDistanceMeters(persistedTotalDistanceMeters);
     }
 }
 
 void Speed::reset() {
     tickNr = 0;
-    persistedTickNr = 0;
-    preferences.writeSpeedMeterTickNr(0);
+    tickTime = micros();
+    persistedTotalDistanceMetersOnStartup = 0;
+    persistedTotalDistanceMeters = 0;
+    preferences.writeTotalDistanceMeters(0);
 }

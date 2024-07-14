@@ -2,9 +2,9 @@
 #include "debug.h"
 #include <NanoBLEFlashPrefs.h>
 
-void Preferences::writeSpeedMeterTickNr(unsigned long value) {
+void Preferences::writeTotalDistanceMeters(unsigned long value) {
     DEBUG_PRINTLN("Writing preferences");
-    data.speedMeterTickNr = value;
+    data.totalDistanceMeters = value;
     int8_t rc = flashPrefs.writePrefs(&data, sizeof(data));
     if (rc != FDS_SUCCESS) {
         DEBUG_PRINTLN("Error writing preferences");
@@ -12,12 +12,12 @@ void Preferences::writeSpeedMeterTickNr(unsigned long value) {
     }
 }
 
-unsigned long Preferences::readSpeedMeterTickNr() {
+unsigned long Preferences::readTotalDistanceMeters() {
     DEBUG_PRINTLN("Reading preferences");
     int8_t rc = flashPrefs.readPrefs(&data, sizeof(data));
     if (rc != FDS_SUCCESS) {
         DEBUG_PRINTLN("No preferences found");
         DEBUG_PRINTLN(flashPrefs.errorString(rc));
     }
-    return data.speedMeterTickNr;
+    return data.totalDistanceMeters;
 }
