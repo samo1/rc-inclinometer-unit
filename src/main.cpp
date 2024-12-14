@@ -118,6 +118,7 @@ MainTask mainTask(&scheduler);
 
 void setup() {
     DEBUG_INIT;
+    preferences.initialize();
     toggleSwitch.setDebounceTime(50);
     dig.initialize();
     incline.initialize();
