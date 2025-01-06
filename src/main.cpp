@@ -21,6 +21,7 @@ Receiver receiver;
 Sound sound(&scheduler);
 Winch winch(statusInfo);
 ezButton toggleSwitch(D2);
+bool soundEnabled = true;
 
 static void updateInclineData() {
     PitchRoll pitchRoll = incline.read();
@@ -31,13 +32,13 @@ static void updateInclineData() {
         bool rollWarning1 = pitchRoll.roll > 45 || pitchRoll.roll < -45;
         bool rollWarning2 = pitchRoll.roll > 40 || pitchRoll.roll < -40;
 
-        if ((rollWarning1 || rollWarning2) && pitchWarning) {
+        if (soundEnabled && (rollWarning1 || rollWarning2) && pitchWarning) {
             sound.rollAndPitchWarning();
-        } else if (rollWarning1) {
+        } else if (soundEnabled && rollWarning1) {
             sound.rollWarning1();
-        } else if (rollWarning2) {
+        } else if (soundEnabled && rollWarning2) {
             sound.rollWarning2();
-        } else if (pitchWarning) {
+        } else if (soundEnabled && pitchWarning) {
             sound.pitchWarning();
         } else {
             sound.silence();
@@ -59,6 +60,12 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
         dig.enableFrontDig();
     } else if (controlString.equalsIgnoreCase("dig_disable")) {
         dig.disableFrontDig();
+    } else if (controlString.equalsIgnoreCase("snd_enable")) {
+        soundEnabled = true;
+        statusInfo.soundEnabled();
+    } else if (controlString.equalsIgnoreCase("snd_disable")) {
+        soundEnabled = false;
+        statusInfo.soundDisabled();
     } else if (controlString.equalsIgnoreCase("reset_speed")) {
         Speed::reset();
     }

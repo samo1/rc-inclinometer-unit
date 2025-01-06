@@ -28,6 +28,14 @@ void StatusInfo::digDisabled() {
     info[2] = 'D';
 }
 
+void StatusInfo::soundEnabled() {
+    info[3] = 'E';
+}
+
+void StatusInfo::soundDisabled() {
+    info[3] = 'D';
+}
+
 String StatusInfo::getInfo() {
     previousInfo = info;
     return info;
