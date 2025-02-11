@@ -1,944 +1,3130 @@
-(kicad_sch (version 20211123) (generator eeschema)
-
-  (uuid 96dfb424-e5e9-404f-ad49-963b0a17b05d)
-
-  (paper "A4")
-
-  (lib_symbols
-    (symbol "Switch:SW_DIP_x01" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "SW" (id 0) (at 0 3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "SW_DIP_x01" (id 1) (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "dip switch" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "SW?DIP?x1*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "SW_DIP_x01_0_0"
-        (circle (center -2.032 0) (radius 0.508)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.524 0.127)
-            (xy 2.3622 1.1684)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (circle (center 2.032 0) (radius 0.508)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "SW_DIP_x01_0_1"
-        (rectangle (start -3.81 2.54) (end 3.81 -2.54)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "SW_DIP_x01_1_1"
-        (pin passive line (at -7.62 0 0) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 7.62 0 180) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-custom-library:Hall effect sensor" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Hall effect sensor" (id 1) (at 0 0 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Hall effect sensor_0_1"
-        (rectangle (start -10.16 -2.54) (end 10.16 -15.24)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "Hall effect sensor_1_1"
-        (pin output line (at -12.7 -7.62 0) (length 2.54)
-          (name "AOUT" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -12.7 -5.08 0) (length 2.54)
-          (name "DOUT" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -12.7 -10.16 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -12.7 -12.7 0) (length 2.54)
-          (name "VCC" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-custom-library:Logic Level Converter" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 13.97 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "Logic Level Converter" (id 1) (at 0 11.43 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 9.525 3.175 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 9.525 3.175 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Logic Level Converter_0_0"
-        (pin unspecified line (at -8.89 -1.27 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 -1.27 180) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 1.27 180) (length 2.54)
-          (name "HV" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 6.35 180) (length 2.54)
-          (name "HV1" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 3.81 180) (length 2.54)
-          (name "HV2" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 -3.81 180) (length 2.54)
-          (name "HV3" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 8.89 -6.35 180) (length 2.54)
-          (name "HV4" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at -8.89 1.27 0) (length 2.54)
-          (name "LV" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at -8.89 6.35 0) (length 2.54)
-          (name "LV1" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at -8.89 3.81 0) (length 2.54)
-          (name "LV2" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at -8.89 -3.81 0) (length 2.54)
-          (name "LV3" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at -8.89 -6.35 0) (length 2.54)
-          (name "LV4" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "Logic Level Converter_0_1"
-        (rectangle (start -6.35 8.89) (end 6.35 -8.89)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-custom-library:Passive buzzer module" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 7.62 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "Passive buzzer module" (id 1) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Passive buzzer module_0_1"
-        (rectangle (start -5.08 2.54) (end 5.08 -3.81)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "Passive buzzer module_1_1"
-        (pin input line (at 2.54 -6.35 90) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at 0 -6.35 90) (length 2.54)
-          (name "IO" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -2.54 -6.35 90) (length 2.54)
-          (name "VCC" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-custom-library:RC Receiver" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "RC Receiver" (id 1) (at 0 1.27 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "RC Receiver_0_1"
-        (rectangle (start -5.08 -1.27) (end 5.08 -19.05)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "RC Receiver_1_1"
-        (pin output line (at -7.62 -13.97 0) (length 2.54)
-          (name "+5V" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -7.62 -6.35 0) (length 2.54)
-          (name "+5V" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -7.62 -3.81 0) (length 2.54)
-          (name "CH3" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -7.62 -11.43 0) (length 2.54)
-          (name "CH4" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -7.62 -16.51 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at -7.62 -8.89 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-custom-library:Winch controller" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "Winch controller" (id 1) (at 0 0 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Winch controller_0_1"
-        (rectangle (start -3.81 -2.54) (end 3.81 -12.7)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "Winch controller_1_1"
-        (pin input line (at -6.35 -10.16 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -6.35 -5.08 0) (length 2.54)
-          (name "IO" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -6.35 -7.62 0) (length 2.54)
-          (name "VCC" (effects (font (size 1.27 1.27))))
-          (number "" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "rc-inclinometer-unit-rescue:Arduino_Nano-Arduino" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at -10.16 24.13 0)
-        (effects (font (size 1.27 1.27)) (justify left bottom))
-      )
-      (property "Value" "Arduino_Nano-Arduino" (id 1) (at -10.16 22.86 0)
-        (effects (font (size 1.27 1.27)) (justify left top))
-      )
-      (property "Footprint" "Arduino:Arduino_Nano" (id 2) (at 0 -21.59 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Arduino*Nano*" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Arduino_Nano-Arduino_0_1"
-        (rectangle (start -10.16 20.32) (end 10.16 -20.32)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-      )
-      (symbol "Arduino_Nano-Arduino_1_1"
-        (pin bidirectional line (at -15.24 17.78 0) (length 5.08)
-          (name "D1/TX" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -5.08 0) (length 5.08)
-          (name "D7" (effects (font (size 1.27 1.27))))
-          (number "10" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -7.62 0) (length 5.08)
-          (name "D8" (effects (font (size 1.27 1.27))))
-          (number "11" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -10.16 0) (length 5.08)
-          (name "~{D9}" (effects (font (size 1.27 1.27))))
-          (number "12" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -12.7 0) (length 5.08)
-          (name "~{D10}" (effects (font (size 1.27 1.27))))
-          (number "13" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -15.24 0) (length 5.08)
-          (name "~{D11}" (effects (font (size 1.27 1.27))))
-          (number "14" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -17.78 0) (length 5.08)
-          (name "D12" (effects (font (size 1.27 1.27))))
-          (number "15" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 -17.78 180) (length 5.08)
-          (name "D13" (effects (font (size 1.27 1.27))))
-          (number "16" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_out line (at 15.24 -15.24 180) (length 5.08)
-          (name "3V3" (effects (font (size 1.27 1.27))))
-          (number "17" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at 15.24 -12.7 180) (length 5.08)
-          (name "AREF" (effects (font (size 1.27 1.27))))
-          (number "18" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 -10.16 180) (length 5.08)
-          (name "A0/D14" (effects (font (size 1.27 1.27))))
-          (number "19" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 15.24 0) (length 5.08)
-          (name "D0/RX" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 -7.62 180) (length 5.08)
-          (name "A1/D15" (effects (font (size 1.27 1.27))))
-          (number "20" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 -5.08 180) (length 5.08)
-          (name "A2/D16" (effects (font (size 1.27 1.27))))
-          (number "21" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 -2.54 180) (length 5.08)
-          (name "A3/D17" (effects (font (size 1.27 1.27))))
-          (number "22" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 0 180) (length 5.08)
-          (name "A4/D18" (effects (font (size 1.27 1.27))))
-          (number "23" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 2.54 180) (length 5.08)
-          (name "A5/D19" (effects (font (size 1.27 1.27))))
-          (number "24" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 5.08 180) (length 5.08)
-          (name "A6/D20" (effects (font (size 1.27 1.27))))
-          (number "25" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 15.24 7.62 180) (length 5.08)
-          (name "A7/D21" (effects (font (size 1.27 1.27))))
-          (number "26" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_out line (at 15.24 10.16 180) (length 5.08)
-          (name "+5V" (effects (font (size 1.27 1.27))))
-          (number "27" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at 15.24 12.7 180) (length 5.08)
-          (name "~{RESET}" (effects (font (size 1.27 1.27))))
-          (number "28" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at 15.24 15.24 180) (length 5.08)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "29" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -15.24 12.7 0) (length 5.08)
-          (name "~{RESET}" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at 15.24 17.78 180) (length 5.08)
-          (name "VIN" (effects (font (size 1.27 1.27))))
-          (number "30" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at -15.24 10.16 0) (length 5.08)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 7.62 0) (length 5.08)
-          (name "D2" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 5.08 0) (length 5.08)
-          (name "~{D3}" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 2.54 0) (length 5.08)
-          (name "D4" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 0 0) (length 5.08)
-          (name "~{D5}" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -15.24 -2.54 0) (length 5.08)
-          (name "~{D6}" (effects (font (size 1.27 1.27))))
-          (number "9" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-  (junction (at 187.96 71.12) (diameter 0) (color 0 0 0 0)
-    (uuid 17752663-914d-4d0c-99e4-f306cafe30bc)
-  )
-  (junction (at 111.76 111.76) (diameter 0) (color 0 0 0 0)
-    (uuid 4c475e51-b285-432a-83b0-280684bed2a4)
-  )
-  (junction (at 190.5 73.66) (diameter 0) (color 0 0 0 0)
-    (uuid 4d8e81da-3e3c-45fb-8b1d-5f93b5280ae0)
-  )
-  (junction (at 125.73 78.74) (diameter 0) (color 0 0 0 0)
-    (uuid 5a819857-e7b0-497b-98b5-f4879424a2c7)
-  )
-  (junction (at 114.3 109.22) (diameter 0) (color 0 0 0 0)
-    (uuid b14af91b-84f4-442e-a71e-d4a9d2c967df)
-  )
-  (junction (at 187.96 111.76) (diameter 0) (color 0 0 0 0)
-    (uuid b6c9e4a9-1160-41c8-b3bb-8845654067dc)
-  )
-  (junction (at 161.29 104.14) (diameter 0) (color 0 0 0 0)
-    (uuid b83251f5-f6fa-4cac-80e9-52b544ac908f)
-  )
-  (junction (at 190.5 109.22) (diameter 0) (color 0 0 0 0)
-    (uuid bf730b55-5c96-44cf-a89f-3e713b425294)
-  )
-  (junction (at 190.5 91.44) (diameter 0) (color 0 0 0 0)
-    (uuid ce296fa0-37cb-4333-a2ad-933a8bde704f)
-  )
-
-  (wire (pts (xy 157.48 99.06) (xy 182.88 99.06))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 03314278-369d-472a-8dd4-a086978a2863)
-  )
-  (wire (pts (xy 119.38 78.74) (xy 119.38 76.2))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 053deaf4-4988-447e-8963-e12acdcf717c)
-  )
-  (wire (pts (xy 182.88 50.8) (xy 191.77 50.8))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0c9d6e74-9150-4f0c-a5fd-0d4a6a305dd6)
-  )
-  (wire (pts (xy 189.23 63.5) (xy 189.23 55.88))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0ca2c878-d2bb-4a57-9b5c-4fe8a1d13030)
-  )
-  (wire (pts (xy 187.96 71.12) (xy 193.04 71.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0db82753-505f-4eda-8e76-1d952f07c354)
-  )
-  (wire (pts (xy 161.29 104.14) (xy 163.83 104.14))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0ebd437e-a16c-40ed-aac5-b8f2fbbbca19)
-  )
-  (wire (pts (xy 157.48 71.12) (xy 187.96 71.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 122740f8-e96a-4147-84c9-f144013d5479)
-  )
-  (wire (pts (xy 187.96 111.76) (xy 187.96 116.84))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 1528c13b-4fa0-4136-bff9-99ec38c867b1)
-  )
-  (wire (pts (xy 111.76 119.38) (xy 190.5 119.38))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 17ba45f8-b78e-47f3-b2ea-fa5c20a66292)
-  )
-  (wire (pts (xy 109.22 109.22) (xy 114.3 109.22))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 19cdd260-5a73-4959-aabb-d422089534af)
-  )
-  (wire (pts (xy 114.3 116.84) (xy 114.3 109.22))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 1c59a368-15d8-47ae-8b3d-dab81c248099)
-  )
-  (wire (pts (xy 187.96 111.76) (xy 193.04 111.76))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 1c953593-9697-426f-977d-8c5c07b4d5e3)
-  )
-  (wire (pts (xy 190.5 73.66) (xy 193.04 73.66))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 1ff3eafd-2285-4db4-99c9-c211e8858d74)
-  )
-  (wire (pts (xy 109.22 96.52) (xy 111.76 96.52))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 244ee204-b72e-4ebe-ae44-fc5653e74079)
-  )
-  (wire (pts (xy 182.88 99.06) (xy 182.88 106.68))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 32089fbf-92e1-4fba-9e01-78ed78aab4b6)
-  )
-  (wire (pts (xy 163.83 104.14) (xy 163.83 86.36))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 329ae91b-51da-40ab-b084-ecee90211891)
-  )
-  (wire (pts (xy 102.87 81.28) (xy 127 81.28))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 39fea933-e6b4-4987-bc77-199c24d777f0)
-  )
-  (wire (pts (xy 119.38 78.74) (xy 125.73 78.74))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3c3f1bc5-1b7a-48ec-be70-3925ccf39f06)
-  )
-  (wire (pts (xy 193.04 63.5) (xy 189.23 63.5))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3d99e3e8-5780-40c8-9bce-85bff1d7767b)
-  )
-  (wire (pts (xy 166.37 114.3) (xy 166.37 88.9))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3ea724de-7f2c-47a4-80f7-bbc44f61853d)
-  )
-  (wire (pts (xy 190.5 91.44) (xy 190.5 109.22))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 45b1d077-7340-4fea-ba41-108915e66765)
-  )
-  (wire (pts (xy 124.46 101.6) (xy 124.46 111.76))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4a41ace8-f262-49e7-bcbc-eaedbc94fb07)
-  )
-  (wire (pts (xy 190.5 73.66) (xy 190.5 91.44))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4a6e6473-185c-45a1-817c-5f506bc9cf59)
-  )
-  (wire (pts (xy 125.73 78.74) (xy 125.73 58.42))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4d06917e-780e-4329-908a-585883b714ca)
-  )
-  (wire (pts (xy 161.29 104.14) (xy 161.29 55.88))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 506ebc17-0723-4c0c-9dc0-e3772421772e)
-  )
-  (wire (pts (xy 193.04 66.04) (xy 186.69 66.04))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5733e081-9b6d-497b-9227-ba0c27975ff8)
-  )
-  (wire (pts (xy 119.38 114.3) (xy 166.37 114.3))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 58d1f108-defd-4121-bfad-7a7e30c79ee2)
-  )
-  (wire (pts (xy 161.29 55.88) (xy 165.1 55.88))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5d7266b5-fb4a-4a23-988a-72ebaced982d)
-  )
-  (wire (pts (xy 127 83.82) (xy 119.38 83.82))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5dd2afbf-a39d-4349-ba3d-f55ce5767db0)
-  )
-  (wire (pts (xy 185.42 111.76) (xy 185.42 104.14))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5e1c9d81-01d6-40f6-a4e0-94f5c02f732a)
-  )
-  (wire (pts (xy 163.83 86.36) (xy 193.04 86.36))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 666fadbe-9bd9-4f31-9f6a-ed01d1a1eff9)
-  )
-  (wire (pts (xy 123.19 50.8) (xy 165.1 50.8))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 6dbc37f2-8577-4f25-b48a-d5ad97b8d134)
-  )
-  (wire (pts (xy 190.5 109.22) (xy 193.04 109.22))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 6ee036b9-add1-49a4-9eec-26ae5217f97e)
-  )
-  (wire (pts (xy 123.19 88.9) (xy 123.19 50.8))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 6f64db24-4fd4-425c-afb0-baa281b0b6c7)
-  )
-  (wire (pts (xy 187.96 116.84) (xy 114.3 116.84))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 712c801e-4f53-4539-b592-b43b46784923)
-  )
-  (wire (pts (xy 127 101.6) (xy 124.46 101.6))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 7861c137-1f14-411a-8eef-bedd739161aa)
-  )
-  (wire (pts (xy 109.22 93.98) (xy 114.3 93.98))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 7ac110ef-fbee-4442-8178-aee89c3ced96)
-  )
-  (wire (pts (xy 124.46 111.76) (xy 185.42 111.76))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 7c13acc7-187c-4321-b034-de8d4f95d599)
-  )
-  (wire (pts (xy 114.3 109.22) (xy 114.3 93.98))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 81b7aa87-b0b4-4d8f-885e-a474840fb555)
-  )
-  (wire (pts (xy 190.5 109.22) (xy 190.5 119.38))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 880f7510-715c-4b5b-bd19-d4b8db9eeaf5)
-  )
-  (wire (pts (xy 121.92 99.06) (xy 121.92 106.68))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 9381f091-a652-431c-88a8-30d1857e86dd)
-  )
-  (wire (pts (xy 157.48 73.66) (xy 190.5 73.66))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 94466edb-a055-44e3-917c-af600b53681a)
-  )
-  (wire (pts (xy 127 99.06) (xy 121.92 99.06))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid a467e02b-84e2-4dd1-9765-25321ade2b85)
-  )
-  (wire (pts (xy 187.96 71.12) (xy 187.96 111.76))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid a4a6911a-f4c6-471b-85e0-1f62d33587bd)
-  )
-  (wire (pts (xy 190.5 91.44) (xy 193.04 91.44))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid a5714b07-294d-4b75-9933-7c19553c9b6f)
-  )
-  (wire (pts (xy 185.42 104.14) (xy 193.04 104.14))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid aaa250d9-a923-4381-a2ea-e7208dacce74)
-  )
-  (wire (pts (xy 157.48 104.14) (xy 161.29 104.14))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid aaa66268-47f0-4c52-a0c7-7481b961dd51)
-  )
-  (wire (pts (xy 109.22 111.76) (xy 111.76 111.76))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid b34010e8-7314-467d-b7e5-99a7de76c09a)
-  )
-  (wire (pts (xy 125.73 58.42) (xy 165.1 58.42))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid b431d60c-ce30-480a-a63b-51d76ddd87d8)
-  )
-  (wire (pts (xy 166.37 88.9) (xy 193.04 88.9))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid bcf1bebf-6b9d-4077-97ee-20dabc63a1aa)
-  )
-  (wire (pts (xy 109.22 91.44) (xy 127 91.44))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid c17fc14c-abfa-473c-9d7a-3c8fd0e17cf8)
-  )
-  (wire (pts (xy 189.23 55.88) (xy 182.88 55.88))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid c2da6113-302b-44f1-a25d-01b78cdec967)
-  )
-  (wire (pts (xy 193.04 60.96) (xy 191.77 60.96))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid c38eb78c-fc47-4891-8a49-02e805a14ba7)
-  )
-  (wire (pts (xy 191.77 60.96) (xy 191.77 50.8))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid c59f771a-222e-4e92-b21d-4964cb88445c)
-  )
-  (wire (pts (xy 109.22 106.68) (xy 121.92 106.68))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid c7de9d63-a012-4c57-96fa-f302fdf96412)
-  )
-  (wire (pts (xy 111.76 111.76) (xy 111.76 119.38))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid ca5f79e4-9b63-4efd-848f-76731cdc3ae5)
-  )
-  (wire (pts (xy 111.76 111.76) (xy 111.76 96.52))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid cc8c1c19-a0ee-4bca-9e3e-81019cf816f2)
-  )
-  (wire (pts (xy 102.87 81.28) (xy 102.87 76.2))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid cd029732-2361-4794-bfae-0d1eddae0773)
-  )
-  (wire (pts (xy 125.73 78.74) (xy 127 78.74))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d271de95-9854-47f8-b771-4b5930cf59e8)
-  )
-  (wire (pts (xy 186.69 66.04) (xy 186.69 58.42))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d66c5fe9-74fb-41f7-9810-2cd5afe34f7c)
-  )
-  (wire (pts (xy 193.04 106.68) (xy 182.88 106.68))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid dc941978-9258-499f-a21c-9e53ef459037)
-  )
-  (wire (pts (xy 119.38 83.82) (xy 119.38 114.3))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid df60df95-4517-41ff-a092-70c199d02505)
-  )
-  (wire (pts (xy 123.19 88.9) (xy 127 88.9))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid e86a4e70-53c2-4945-b42e-cf33acf21dc0)
-  )
-  (wire (pts (xy 118.11 76.2) (xy 119.38 76.2))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid f1dabde3-4707-4e23-b466-e0f783671d2f)
-  )
-  (wire (pts (xy 182.88 58.42) (xy 186.69 58.42))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid fbec0c43-41e4-431b-a891-9000ac38fd3b)
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-rescue:Arduino_Nano-Arduino") (at 142.24 88.9 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 00000000-0000-0000-0000-00006170ab08)
-    (property "Reference" "U?" (id 0) (at 142.24 64.3382 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Arduino Nano 33 BLE Sense" (id 1) (at 142.24 66.6496 0))
-    (property "Footprint" "Arduino:Arduino_Nano" (id 2) (at 142.24 110.49 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "https://store.arduino.cc/usa/arduino-nano" (id 3) (at 142.24 91.44 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 21e95f38-2e10-41f3-afa8-e75d08015363))
-    (pin "10" (uuid 15b8b00e-9a56-4368-a22a-6bda55afcab6))
-    (pin "11" (uuid 9057ed88-35ab-446d-a4c3-aa524d355ddb))
-    (pin "12" (uuid d315d0f5-bd97-413e-b231-8fe66493c592))
-    (pin "13" (uuid 0a701553-19ad-4db2-bd2c-69f2b68fd81e))
-    (pin "14" (uuid 0b2ea08d-6544-4191-a687-e6c4afd145a9))
-    (pin "15" (uuid 47f83006-526b-40f5-892b-84b34723b04a))
-    (pin "16" (uuid 7f3220f3-b467-4fdd-9eb9-a647b06fafac))
-    (pin "17" (uuid 869539dd-f15a-416c-ae3b-88856f983acd))
-    (pin "18" (uuid e9361a7c-ebf5-4b5b-b963-436b27fcb3ef))
-    (pin "19" (uuid d7658dd3-dc02-4d62-b9ef-8506f2635598))
-    (pin "2" (uuid 10e21379-6993-451e-b624-56bcfadeb7aa))
-    (pin "20" (uuid c4493b7b-6299-4e75-a505-aaaa5bdc2322))
-    (pin "21" (uuid c0caaf2f-9051-40d3-9d08-5b1cafd7cda7))
-    (pin "22" (uuid 430611ff-a525-417c-a67a-768476f244a1))
-    (pin "23" (uuid da931cd5-c7e9-463c-b637-858f01f3cd3c))
-    (pin "24" (uuid a19b7c04-871d-4894-8b0c-24775e38231a))
-    (pin "25" (uuid 11aa87fb-70fa-47d0-ad06-533703873db5))
-    (pin "26" (uuid 04b160f7-e759-4ca9-b366-7df61a20df48))
-    (pin "27" (uuid 6b059175-5345-4f27-9209-1a85b5718916))
-    (pin "28" (uuid cf643077-cb74-434e-ac27-6e3044c5b257))
-    (pin "29" (uuid 0548e445-ac94-404b-a58a-4e26949e9bf7))
-    (pin "3" (uuid 0a6fe358-be1a-4df4-a4cf-0688c44556fe))
-    (pin "30" (uuid bcb025f7-b13d-4753-b932-313eeb77d4d8))
-    (pin "4" (uuid 4e697e03-4d8d-448b-8ee7-4c16c5f3a311))
-    (pin "5" (uuid adb33023-1e2a-483e-9afd-b8f1e58c8bc5))
-    (pin "6" (uuid edf8ea12-ea59-4e41-8029-dfbe981f3050))
-    (pin "7" (uuid ff565dc5-fac4-46b4-99a5-a664e985da4e))
-    (pin "8" (uuid 86cd2ae3-8b34-4ca5-bdba-b29f1f398d5a))
-    (pin "9" (uuid 8cb49045-f1bc-4b22-8358-8488b624d0b8))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:Winch controller") (at 102.87 86.36 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 2419fd11-7a3e-44cd-918f-8db3ea424502)
-    (property "Reference" "U?" (id 0) (at 102.87 83.82 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Front dig servo" (id 1) (at 110.49 86.36 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (id 2) (at 102.87 86.36 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 102.87 86.36 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid 2ff06a09-4a38-4e57-b531-69e062a4f711))
-    (pin "" (uuid 2ff06a09-4a38-4e57-b531-69e062a4f711))
-    (pin "" (uuid 2ff06a09-4a38-4e57-b531-69e062a4f711))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:Hall effect sensor") (at 205.74 99.06 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 6a06bc5d-fa1a-4a1e-b574-cede84d86f64)
-    (property "Reference" "U?" (id 0) (at 217.17 106.6799 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Value" "Hall effect sensor" (id 1) (at 196.85 99.06 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (id 2) (at 205.74 99.06 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 205.74 99.06 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid a5b5a874-886c-43a5-9b8d-2c7f0edfc0f6))
-    (pin "" (uuid 88a41066-0348-4588-a285-e755c95d2001))
-    (pin "" (uuid 9ff3b6a6-0965-4fb9-bc85-4bf8d8c2d6b9))
-    (pin "" (uuid ec878dbc-ae3b-4a14-81fe-fc05c35c66e9))
-  )
-
-  (symbol (lib_id "Switch:SW_DIP_x01") (at 110.49 76.2 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 6b0617cf-0a7c-4a6e-a84d-f15e93d7eb9b)
-    (property "Reference" "SW?" (id 0) (at 110.49 68.58 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "SW_DIP_x01" (id 1) (at 110.49 71.12 0))
-    (property "Footprint" "" (id 2) (at 110.49 76.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 110.49 76.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid e2873e1e-0ac7-4098-a5c6-3650313372c5))
-    (pin "2" (uuid 7f339c6e-5350-449b-8df4-07ce3d111ccf))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:Winch controller") (at 102.87 101.6 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 7751ee78-6f34-4432-a4ed-c73af0d92627)
-    (property "Reference" "U?" (id 0) (at 102.87 99.06 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Winch controller" (id 1) (at 102.87 101.6 0))
-    (property "Footprint" "" (id 2) (at 102.87 101.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 102.87 101.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid e7c9e541-eca8-49b3-b346-1187adfc3cb7))
-    (pin "" (uuid e7c9e541-eca8-49b3-b346-1187adfc3cb7))
-    (pin "" (uuid e7c9e541-eca8-49b3-b346-1187adfc3cb7))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:Logic Level Converter") (at 173.99 57.15 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid adf1c6f5-5eee-4ac4-bc25-0505500eb913)
-    (property "Reference" "U?" (id 0) (at 172.72 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Logic Level Converter" (id 1) (at 173.99 45.72 0))
-    (property "Footprint" "" (id 2) (at 182.245 53.975 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 182.245 53.975 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-    (pin "" (uuid 75cd1cf1-64cb-4532-93bc-7ee88ede2c01))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:Passive buzzer module") (at 199.39 88.9 270) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid d70d312f-e90d-4fed-8771-05891f600433)
-    (property "Reference" "U?" (id 0) (at 207.01 88.9 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Passive buzzer module" (id 1) (at 187.96 81.28 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (id 2) (at 204.47 88.9 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 204.47 88.9 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid bf27c125-8257-4f16-a23a-527411d3eb40))
-    (pin "" (uuid bf27c125-8257-4f16-a23a-527411d3eb40))
-    (pin "" (uuid bf27c125-8257-4f16-a23a-527411d3eb40))
-  )
-
-  (symbol (lib_id "rc-inclinometer-unit-custom-library:RC Receiver") (at 200.66 57.15 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid e3142aeb-52d2-4b0f-8297-ff6be6792403)
-    (property "Reference" "U?" (id 0) (at 200.66 53.34 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "RC Receiver" (id 1) (at 195.58 55.88 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (id 2) (at 200.66 57.15 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 200.66 57.15 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-    (pin "" (uuid 76fd7d84-484c-4e68-9134-e5f8f0d50c40))
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
-
-  (symbol_instances
-    (path "/6b0617cf-0a7c-4a6e-a84d-f15e93d7eb9b"
-      (reference "SW?") (unit 1) (value "SW_DIP_x01") (footprint "")
-    )
-    (path "/00000000-0000-0000-0000-00006170ab08"
-      (reference "U?") (unit 1) (value "Arduino Nano 33 BLE Sense") (footprint "Arduino:Arduino_Nano")
-    )
-    (path "/2419fd11-7a3e-44cd-918f-8db3ea424502"
-      (reference "U?") (unit 1) (value "Front dig servo") (footprint "")
-    )
-    (path "/6a06bc5d-fa1a-4a1e-b574-cede84d86f64"
-      (reference "U?") (unit 1) (value "Hall effect sensor") (footprint "")
-    )
-    (path "/7751ee78-6f34-4432-a4ed-c73af0d92627"
-      (reference "U?") (unit 1) (value "Winch controller") (footprint "")
-    )
-    (path "/adf1c6f5-5eee-4ac4-bc25-0505500eb913"
-      (reference "U?") (unit 1) (value "Logic Level Converter") (footprint "")
-    )
-    (path "/d70d312f-e90d-4fed-8771-05891f600433"
-      (reference "U?") (unit 1) (value "Passive buzzer module") (footprint "")
-    )
-    (path "/e3142aeb-52d2-4b0f-8297-ff6be6792403"
-      (reference "U?") (unit 1) (value "RC Receiver") (footprint "")
-    )
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "96dfb424-e5e9-404f-ad49-963b0a17b05d")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Switch:SW_DIP_x01"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_DIP_x01"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "dip switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW?DIP?x1*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_DIP_x01_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.127) (xy 2.3622 1.1684)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_0_1"
+				(rectangle
+					(start -3.81 2.54)
+					(end 3.81 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:Hall effect sensor"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Hall effect sensor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Hall effect sensor_0_1"
+				(rectangle
+					(start -10.16 -2.54)
+					(end 10.16 -15.24)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Hall effect sensor_1_1"
+				(pin output line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "AOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -12.7 -5.08 0)
+					(length 2.54)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -10.16 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -12.7 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:Logic Level Converter"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "Logic Level Converter"
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 9.525 3.175 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 9.525 3.175 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Logic Level Converter_0_0"
+				(pin unspecified line
+					(at -8.89 -1.27 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 -1.27 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 1.27 180)
+					(length 2.54)
+					(name "HV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 6.35 180)
+					(length 2.54)
+					(name "HV1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 3.81 180)
+					(length 2.54)
+					(name "HV2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 -3.81 180)
+					(length 2.54)
+					(name "HV3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 -6.35 180)
+					(length 2.54)
+					(name "HV4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 1.27 0)
+					(length 2.54)
+					(name "LV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 6.35 0)
+					(length 2.54)
+					(name "LV1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 3.81 0)
+					(length 2.54)
+					(name "LV2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 -3.81 0)
+					(length 2.54)
+					(name "LV3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 -6.35 0)
+					(length 2.54)
+					(name "LV4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "Logic Level Converter_0_1"
+				(rectangle
+					(start -6.35 8.89)
+					(end 6.35 -8.89)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:Passive buzzer module"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "Passive buzzer module"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Passive buzzer module_0_1"
+				(rectangle
+					(start -5.08 2.54)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Passive buzzer module_1_1"
+				(pin input line
+					(at 2.54 -6.35 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -6.35 90)
+					(length 2.54)
+					(name "IO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 -6.35 90)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:RC Receiver"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "RC Receiver"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "RC Receiver_0_1"
+				(rectangle
+					(start -5.08 -1.27)
+					(end 5.08 -19.05)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "RC Receiver_1_1"
+				(pin output line
+					(at -7.62 -13.97 0)
+					(length 2.54)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -7.62 -6.35 0)
+					(length 2.54)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -7.62 -3.81 0)
+					(length 2.54)
+					(name "CH3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -7.62 -11.43 0)
+					(length 2.54)
+					(name "CH4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -7.62 -16.51 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -7.62 -8.89 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:Winch controller"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "Winch controller"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Winch controller_0_1"
+				(rectangle
+					(start -3.81 -2.54)
+					(end 3.81 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Winch controller_1_1"
+				(pin input line
+					(at -6.35 -10.16 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -5.08 0)
+					(length 2.54)
+					(name "IO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -7.62 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-custom-library:Winch controller L298N"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "Winch controller"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Winch controller L298N_0_1"
+				(rectangle
+					(start -3.81 -2.54)
+					(end 3.81 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Winch controller L298N_1_1"
+				(pin input line
+					(at -6.35 -7.62 0)
+					(length 2.54)
+					(name "DIR1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -10.16 0)
+					(length 2.54)
+					(name "DIR2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -6.35 -5.08 0)
+					(length 2.54)
+					(name "PWM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "rc-inclinometer-unit-rescue:Arduino_Nano-Arduino"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -10.16 24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Arduino_Nano-Arduino"
+				(at -10.16 22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Arduino:Arduino_Nano"
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Arduino*Nano*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Arduino_Nano-Arduino_0_1"
+				(rectangle
+					(start -10.16 20.32)
+					(end 10.16 -20.32)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Arduino_Nano-Arduino_1_1"
+				(pin bidirectional line
+					(at -15.24 17.78 0)
+					(length 5.08)
+					(name "D1/TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -5.08 0)
+					(length 5.08)
+					(name "D7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -7.62 0)
+					(length 5.08)
+					(name "D8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -10.16 0)
+					(length 5.08)
+					(name "~{D9}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -12.7 0)
+					(length 5.08)
+					(name "~{D10}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -15.24 0)
+					(length 5.08)
+					(name "~{D11}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -17.78 0)
+					(length 5.08)
+					(name "D12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -17.78 180)
+					(length 5.08)
+					(name "D13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 -15.24 180)
+					(length 5.08)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 15.24 -12.7 180)
+					(length 5.08)
+					(name "AREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -10.16 180)
+					(length 5.08)
+					(name "A0/D14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 15.24 0)
+					(length 5.08)
+					(name "D0/RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -7.62 180)
+					(length 5.08)
+					(name "A1/D15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -5.08 180)
+					(length 5.08)
+					(name "A2/D16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -2.54 180)
+					(length 5.08)
+					(name "A3/D17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 0 180)
+					(length 5.08)
+					(name "A4/D18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 2.54 180)
+					(length 5.08)
+					(name "A5/D19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 5.08 180)
+					(length 5.08)
+					(name "A6/D20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 7.62 180)
+					(length 5.08)
+					(name "A7/D21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 10.16 180)
+					(length 5.08)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 15.24 12.7 180)
+					(length 5.08)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 15.24 15.24 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 12.7 0)
+					(length 5.08)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 15.24 17.78 180)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -15.24 10.16 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 7.62 0)
+					(length 5.08)
+					(name "D2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 5.08 0)
+					(length 5.08)
+					(name "~{D3}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "D4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 0 0)
+					(length 5.08)
+					(name "~{D5}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "~{D6}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 187.96 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17752663-914d-4d0c-99e4-f306cafe30bc")
+	)
+	(junction
+		(at 190.5 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d8e81da-3e3c-45fb-8b1d-5f93b5280ae0")
+	)
+	(junction
+		(at 125.73 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a819857-e7b0-497b-98b5-f4879424a2c7")
+	)
+	(junction
+		(at 187.96 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6c9e4a9-1160-41c8-b3bb-8845654067dc")
+	)
+	(junction
+		(at 161.29 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b83251f5-f6fa-4cac-80e9-52b544ac908f")
+	)
+	(junction
+		(at 190.5 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bf730b55-5c96-44cf-a89f-3e713b425294")
+	)
+	(junction
+		(at 190.5 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce296fa0-37cb-4333-a2ad-933a8bde704f")
+	)
+	(wire
+		(pts
+			(xy 157.48 99.06) (xy 182.88 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03314278-369d-472a-8dd4-a086978a2863")
+	)
+	(wire
+		(pts
+			(xy 119.38 78.74) (xy 119.38 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "053deaf4-4988-447e-8963-e12acdcf717c")
+	)
+	(wire
+		(pts
+			(xy 182.88 50.8) (xy 191.77 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c9d6e74-9150-4f0c-a5fd-0d4a6a305dd6")
+	)
+	(wire
+		(pts
+			(xy 189.23 63.5) (xy 189.23 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ca2c878-d2bb-4a57-9b5c-4fe8a1d13030")
+	)
+	(wire
+		(pts
+			(xy 187.96 71.12) (xy 193.04 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0db82753-505f-4eda-8e76-1d952f07c354")
+	)
+	(wire
+		(pts
+			(xy 161.29 104.14) (xy 163.83 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ebd437e-a16c-40ed-aac5-b8f2fbbbca19")
+	)
+	(wire
+		(pts
+			(xy 157.48 71.12) (xy 187.96 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "122740f8-e96a-4147-84c9-f144013d5479")
+	)
+	(wire
+		(pts
+			(xy 187.96 111.76) (xy 187.96 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1528c13b-4fa0-4136-bff9-99ec38c867b1")
+	)
+	(wire
+		(pts
+			(xy 110.49 119.38) (xy 190.5 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17ba45f8-b78e-47f3-b2ea-fa5c20a66292")
+	)
+	(wire
+		(pts
+			(xy 113.03 93.98) (xy 113.03 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c59a368-15d8-47ae-8b3d-dab81c248099")
+	)
+	(wire
+		(pts
+			(xy 187.96 111.76) (xy 193.04 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c953593-9697-426f-977d-8c5c07b4d5e3")
+	)
+	(wire
+		(pts
+			(xy 190.5 73.66) (xy 193.04 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ff3eafd-2285-4db4-99c9-c211e8858d74")
+	)
+	(wire
+		(pts
+			(xy 109.22 96.52) (xy 110.49 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "244ee204-b72e-4ebe-ae44-fc5653e74079")
+	)
+	(wire
+		(pts
+			(xy 182.88 99.06) (xy 182.88 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32089fbf-92e1-4fba-9e01-78ed78aab4b6")
+	)
+	(wire
+		(pts
+			(xy 163.83 104.14) (xy 163.83 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "329ae91b-51da-40ab-b084-ecee90211891")
+	)
+	(wire
+		(pts
+			(xy 109.22 111.76) (xy 121.92 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36486477-8ae7-4d88-8f5e-902957d1d05c")
+	)
+	(wire
+		(pts
+			(xy 102.87 81.28) (xy 127 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39fea933-e6b4-4987-bc77-199c24d777f0")
+	)
+	(wire
+		(pts
+			(xy 119.38 78.74) (xy 125.73 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3f1bc5-1b7a-48ec-be70-3925ccf39f06")
+	)
+	(wire
+		(pts
+			(xy 193.04 63.5) (xy 189.23 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d99e3e8-5780-40c8-9bce-85bff1d7767b")
+	)
+	(wire
+		(pts
+			(xy 166.37 114.3) (xy 166.37 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ea724de-7f2c-47a4-80f7-bbc44f61853d")
+	)
+	(wire
+		(pts
+			(xy 190.5 91.44) (xy 190.5 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45b1d077-7340-4fea-ba41-108915e66765")
+	)
+	(wire
+		(pts
+			(xy 124.46 101.6) (xy 124.46 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a41ace8-f262-49e7-bcbc-eaedbc94fb07")
+	)
+	(wire
+		(pts
+			(xy 190.5 73.66) (xy 190.5 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a6e6473-185c-45a1-817c-5f506bc9cf59")
+	)
+	(wire
+		(pts
+			(xy 125.73 78.74) (xy 125.73 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d06917e-780e-4329-908a-585883b714ca")
+	)
+	(wire
+		(pts
+			(xy 161.29 104.14) (xy 161.29 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "506ebc17-0723-4c0c-9dc0-e3772421772e")
+	)
+	(wire
+		(pts
+			(xy 193.04 66.04) (xy 186.69 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5733e081-9b6d-497b-9227-ba0c27975ff8")
+	)
+	(wire
+		(pts
+			(xy 115.57 114.3) (xy 166.37 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58d1f108-defd-4121-bfad-7a7e30c79ee2")
+	)
+	(wire
+		(pts
+			(xy 161.29 55.88) (xy 165.1 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d7266b5-fb4a-4a23-988a-72ebaced982d")
+	)
+	(wire
+		(pts
+			(xy 127 83.82) (xy 115.57 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dd2afbf-a39d-4349-ba3d-f55ce5767db0")
+	)
+	(wire
+		(pts
+			(xy 185.42 111.76) (xy 185.42 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e1c9d81-01d6-40f6-a4e0-94f5c02f732a")
+	)
+	(wire
+		(pts
+			(xy 109.22 109.22) (xy 120.65 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63621b06-192c-4a95-aff0-9d79bf882348")
+	)
+	(wire
+		(pts
+			(xy 163.83 86.36) (xy 193.04 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "666fadbe-9bd9-4f31-9f6a-ed01d1a1eff9")
+	)
+	(wire
+		(pts
+			(xy 123.19 50.8) (xy 165.1 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dbc37f2-8577-4f25-b48a-d5ad97b8d134")
+	)
+	(wire
+		(pts
+			(xy 190.5 109.22) (xy 193.04 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ee036b9-add1-49a4-9eec-26ae5217f97e")
+	)
+	(wire
+		(pts
+			(xy 123.19 88.9) (xy 123.19 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f64db24-4fd4-425c-afb0-baa281b0b6c7")
+	)
+	(wire
+		(pts
+			(xy 187.96 116.84) (xy 113.03 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "712c801e-4f53-4539-b592-b43b46784923")
+	)
+	(wire
+		(pts
+			(xy 127 101.6) (xy 124.46 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7861c137-1f14-411a-8eef-bedd739161aa")
+	)
+	(wire
+		(pts
+			(xy 109.22 93.98) (xy 113.03 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ac110ef-fbee-4442-8178-aee89c3ced96")
+	)
+	(wire
+		(pts
+			(xy 124.46 111.76) (xy 185.42 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c13acc7-187c-4321-b034-de8d4f95d599")
+	)
+	(wire
+		(pts
+			(xy 190.5 109.22) (xy 190.5 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "880f7510-715c-4b5b-bd19-d4b8db9eeaf5")
+	)
+	(wire
+		(pts
+			(xy 121.92 106.68) (xy 121.92 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b87e331-5db0-4c92-ad6c-c80d37d51b3b")
+	)
+	(wire
+		(pts
+			(xy 118.11 99.06) (xy 118.11 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9381f091-a652-431c-88a8-30d1857e86dd")
+	)
+	(wire
+		(pts
+			(xy 157.48 73.66) (xy 190.5 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94466edb-a055-44e3-917c-af600b53681a")
+	)
+	(wire
+		(pts
+			(xy 109.22 106.68) (xy 118.11 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9730a6d3-9ceb-4c07-ab21-b3b5fc6c1aed")
+	)
+	(wire
+		(pts
+			(xy 127 99.06) (xy 118.11 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a467e02b-84e2-4dd1-9765-25321ade2b85")
+	)
+	(wire
+		(pts
+			(xy 187.96 71.12) (xy 187.96 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4a6911a-f4c6-471b-85e0-1f62d33587bd")
+	)
+	(wire
+		(pts
+			(xy 190.5 91.44) (xy 193.04 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5714b07-294d-4b75-9933-7c19553c9b6f")
+	)
+	(wire
+		(pts
+			(xy 185.42 104.14) (xy 193.04 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaa250d9-a923-4381-a2ea-e7208dacce74")
+	)
+	(wire
+		(pts
+			(xy 157.48 104.14) (xy 161.29 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaa66268-47f0-4c52-a0c7-7481b961dd51")
+	)
+	(wire
+		(pts
+			(xy 125.73 58.42) (xy 165.1 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b431d60c-ce30-480a-a63b-51d76ddd87d8")
+	)
+	(wire
+		(pts
+			(xy 166.37 88.9) (xy 193.04 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcf1bebf-6b9d-4077-97ee-20dabc63a1aa")
+	)
+	(wire
+		(pts
+			(xy 109.22 91.44) (xy 127 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c17fc14c-abfa-473c-9d7a-3c8fd0e17cf8")
+	)
+	(wire
+		(pts
+			(xy 189.23 55.88) (xy 182.88 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2da6113-302b-44f1-a25d-01b78cdec967")
+	)
+	(wire
+		(pts
+			(xy 193.04 60.96) (xy 191.77 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c38eb78c-fc47-4891-8a49-02e805a14ba7")
+	)
+	(wire
+		(pts
+			(xy 191.77 60.96) (xy 191.77 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c59f771a-222e-4e92-b21d-4964cb88445c")
+	)
+	(wire
+		(pts
+			(xy 110.49 96.52) (xy 110.49 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc8c1c19-a0ee-4bca-9e3e-81019cf816f2")
+	)
+	(wire
+		(pts
+			(xy 102.87 81.28) (xy 102.87 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd029732-2361-4794-bfae-0d1eddae0773")
+	)
+	(wire
+		(pts
+			(xy 125.73 78.74) (xy 127 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d271de95-9854-47f8-b771-4b5930cf59e8")
+	)
+	(wire
+		(pts
+			(xy 186.69 66.04) (xy 186.69 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d66c5fe9-74fb-41f7-9810-2cd5afe34f7c")
+	)
+	(wire
+		(pts
+			(xy 193.04 106.68) (xy 182.88 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc941978-9258-499f-a21c-9e53ef459037")
+	)
+	(wire
+		(pts
+			(xy 115.57 83.82) (xy 115.57 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df60df95-4517-41ff-a092-70c199d02505")
+	)
+	(wire
+		(pts
+			(xy 123.19 88.9) (xy 127 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e86a4e70-53c2-4945-b42e-cf33acf21dc0")
+	)
+	(wire
+		(pts
+			(xy 127 104.14) (xy 120.65 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8c91d27-5985-4cba-b5e1-13d61841822e")
+	)
+	(wire
+		(pts
+			(xy 118.11 76.2) (xy 119.38 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1dabde3-4707-4e23-b466-e0f783671d2f")
+	)
+	(wire
+		(pts
+			(xy 127 106.68) (xy 121.92 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9c7bd23-eb10-464f-895d-438b827437c3")
+	)
+	(wire
+		(pts
+			(xy 182.88 58.42) (xy 186.69 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbec0c43-41e4-431b-a891-9000ac38fd3b")
+	)
+	(wire
+		(pts
+			(xy 120.65 104.14) (xy 120.65 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe656616-66f5-4099-afc3-af01fb3927cf")
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-rescue:Arduino_Nano-Arduino")
+		(at 142.24 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "00000000-0000-0000-0000-00006170ab08")
+		(property "Reference" "U?"
+			(at 142.24 64.3382 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "Arduino Nano 33 BLE Sense"
+			(at 142.24 66.6496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Arduino:Arduino_Nano"
+			(at 142.24 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://store.arduino.cc/usa/arduino-nano"
+			(at 142.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21e95f38-2e10-41f3-afa8-e75d08015363")
+		)
+		(pin "10"
+			(uuid "15b8b00e-9a56-4368-a22a-6bda55afcab6")
+		)
+		(pin "11"
+			(uuid "9057ed88-35ab-446d-a4c3-aa524d355ddb")
+		)
+		(pin "12"
+			(uuid "d315d0f5-bd97-413e-b231-8fe66493c592")
+		)
+		(pin "13"
+			(uuid "0a701553-19ad-4db2-bd2c-69f2b68fd81e")
+		)
+		(pin "14"
+			(uuid "0b2ea08d-6544-4191-a687-e6c4afd145a9")
+		)
+		(pin "15"
+			(uuid "47f83006-526b-40f5-892b-84b34723b04a")
+		)
+		(pin "16"
+			(uuid "7f3220f3-b467-4fdd-9eb9-a647b06fafac")
+		)
+		(pin "17"
+			(uuid "869539dd-f15a-416c-ae3b-88856f983acd")
+		)
+		(pin "18"
+			(uuid "e9361a7c-ebf5-4b5b-b963-436b27fcb3ef")
+		)
+		(pin "19"
+			(uuid "d7658dd3-dc02-4d62-b9ef-8506f2635598")
+		)
+		(pin "2"
+			(uuid "10e21379-6993-451e-b624-56bcfadeb7aa")
+		)
+		(pin "20"
+			(uuid "c4493b7b-6299-4e75-a505-aaaa5bdc2322")
+		)
+		(pin "21"
+			(uuid "c0caaf2f-9051-40d3-9d08-5b1cafd7cda7")
+		)
+		(pin "22"
+			(uuid "430611ff-a525-417c-a67a-768476f244a1")
+		)
+		(pin "23"
+			(uuid "da931cd5-c7e9-463c-b637-858f01f3cd3c")
+		)
+		(pin "24"
+			(uuid "a19b7c04-871d-4894-8b0c-24775e38231a")
+		)
+		(pin "25"
+			(uuid "11aa87fb-70fa-47d0-ad06-533703873db5")
+		)
+		(pin "26"
+			(uuid "04b160f7-e759-4ca9-b366-7df61a20df48")
+		)
+		(pin "27"
+			(uuid "6b059175-5345-4f27-9209-1a85b5718916")
+		)
+		(pin "28"
+			(uuid "cf643077-cb74-434e-ac27-6e3044c5b257")
+		)
+		(pin "29"
+			(uuid "0548e445-ac94-404b-a58a-4e26949e9bf7")
+		)
+		(pin "3"
+			(uuid "0a6fe358-be1a-4df4-a4cf-0688c44556fe")
+		)
+		(pin "30"
+			(uuid "bcb025f7-b13d-4753-b932-313eeb77d4d8")
+		)
+		(pin "4"
+			(uuid "4e697e03-4d8d-448b-8ee7-4c16c5f3a311")
+		)
+		(pin "5"
+			(uuid "adb33023-1e2a-483e-9afd-b8f1e58c8bc5")
+		)
+		(pin "6"
+			(uuid "edf8ea12-ea59-4e41-8029-dfbe981f3050")
+		)
+		(pin "7"
+			(uuid "ff565dc5-fac4-46b4-99a5-a664e985da4e")
+		)
+		(pin "8"
+			(uuid "86cd2ae3-8b34-4ca5-bdba-b29f1f398d5a")
+		)
+		(pin "9"
+			(uuid "8cb49045-f1bc-4b22-8358-8488b624d0b8")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:Winch controller L298N")
+		(at 102.87 101.6 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "236367d1-a0d5-44ce-97ef-c88a8d1b16cb")
+		(property "Reference" "U1"
+			(at 102.87 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "Winch controller"
+			(at 109.22 101.854 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "6287bdf8-0746-4d0c-890b-6160e35c23ab")
+		)
+		(pin ""
+			(uuid "c43b5aeb-224b-4b28-af61-dce2fe586969")
+		)
+		(pin ""
+			(uuid "39e6d617-2784-4b71-ad8d-d0735ec1572a")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:Winch controller")
+		(at 102.87 86.36 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2419fd11-7a3e-44cd-918f-8db3ea424502")
+		(property "Reference" "U?"
+			(at 102.87 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "Front dig servo"
+			(at 110.49 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "2ff06a09-4a38-4e57-b531-69e062a4f711")
+		)
+		(pin ""
+			(uuid "2ff06a09-4a38-4e57-b531-69e062a4f712")
+		)
+		(pin ""
+			(uuid "2ff06a09-4a38-4e57-b531-69e062a4f713")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:Hall effect sensor")
+		(at 205.74 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a06bc5d-fa1a-4a1e-b574-cede84d86f64")
+		(property "Reference" "U?"
+			(at 217.17 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "Hall effect sensor"
+			(at 196.85 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "a5b5a874-886c-43a5-9b8d-2c7f0edfc0f6")
+		)
+		(pin ""
+			(uuid "88a41066-0348-4588-a285-e755c95d2001")
+		)
+		(pin ""
+			(uuid "9ff3b6a6-0965-4fb9-bc85-4bf8d8c2d6b9")
+		)
+		(pin ""
+			(uuid "ec878dbc-ae3b-4a14-81fe-fc05c35c66e9")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 110.49 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b0617cf-0a7c-4a6e-a84d-f15e93d7eb9b")
+		(property "Reference" "SW?"
+			(at 110.49 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 110.49 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 110.49 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e2873e1e-0ac7-4098-a5c6-3650313372c5")
+		)
+		(pin "2"
+			(uuid "7f339c6e-5350-449b-8df4-07ce3d111ccf")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "SW?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:Logic Level Converter")
+		(at 173.99 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "adf1c6f5-5eee-4ac4-bc25-0505500eb913")
+		(property "Reference" "U?"
+			(at 172.72 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "Logic Level Converter"
+			(at 173.99 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.245 53.975 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.245 53.975 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 173.99 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c01")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c02")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c03")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c04")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c05")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c06")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c07")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c08")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c09")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c0a")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c0b")
+		)
+		(pin ""
+			(uuid "75cd1cf1-64cb-4532-93bc-7ee88ede2c0c")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:Passive buzzer module")
+		(at 199.39 88.9 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d70d312f-e90d-4fed-8771-05891f600433")
+		(property "Reference" "U?"
+			(at 207.01 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "Passive buzzer module"
+			(at 187.96 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 204.47 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 199.39 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "bf27c125-8257-4f16-a23a-527411d3eb40")
+		)
+		(pin ""
+			(uuid "bf27c125-8257-4f16-a23a-527411d3eb41")
+		)
+		(pin ""
+			(uuid "bf27c125-8257-4f16-a23a-527411d3eb42")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "rc-inclinometer-unit-custom-library:RC Receiver")
+		(at 200.66 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e3142aeb-52d2-4b0f-8297-ff6be6792403")
+		(property "Reference" "U?"
+			(at 200.66 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "RC Receiver"
+			(at 195.58 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 200.66 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c40")
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c41")
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c42")
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c43")
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c44")
+		)
+		(pin ""
+			(uuid "76fd7d84-484c-4e68-9134-e5f8f0d50c45")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )
