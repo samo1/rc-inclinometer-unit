@@ -28,7 +28,7 @@ void Winch::in() {
 #ifdef L298N_WINCH_CONTROLLER
         digitalWrite(D11, LOW);
         digitalWrite(D12, HIGH);
-        servo.write(100);
+        servo.write(180);
 #else
         servo.write(45);
 #endif
@@ -42,7 +42,7 @@ void Winch::out() {
 #ifdef L298N_WINCH_CONTROLLER
         digitalWrite(D11, HIGH);
         digitalWrite(D12, LOW);
-        servo.write(100);
+        servo.write(180);
 #else
         servo.write(135);
 #endif
