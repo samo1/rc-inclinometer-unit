@@ -8,3 +8,4 @@
 /cmake-build-nano33ble/
 /CMakeLists.txt
 /CMakeListsPrivate.txt
+.aider*
