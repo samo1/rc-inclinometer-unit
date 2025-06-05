@@ -5,20 +5,24 @@
 #define HALL_SENSOR_DOUT D10
 #define HALL_SENSOR_AOUT PIN_A0
 
-#define MM_DISTANCE_PER_REVOLUTION 49.5
-
 volatile unsigned long tickNr;
 volatile unsigned long tickTime;
 volatile unsigned long lastTimeDiff;
 volatile double speed;
 
+double Speed::mmDistancePerRevolution = 49.5;
+
 extern Preferences preferences;
 unsigned long persistedTotalDistanceMetersOnStartup;
 unsigned long persistedTotalDistanceMeters;
 
-double calculateSpeedKmh(unsigned long timeDiffMicros) {
+double Speed::calculateSpeedKmh(unsigned long timeDiffMicros) {
     // mm / us ... (mm / 1e6) km / (us / (60 * 60 * 1e6)) h
-    return 3600.0 * MM_DISTANCE_PER_REVOLUTION / (double) timeDiffMicros;
+    return 3600.0 * Speed::mmDistancePerRevolution / (double) timeDiffMicros;
+}
+
+void Speed::setDistancePerRevolution(double mmDistance) {
+    mmDistancePerRevolution = mmDistance;
 }
 
 void onTick() {
@@ -26,7 +30,7 @@ void onTick() {
     auto oldTickTime = tickTime;
     tickTime = micros();
     lastTimeDiff = tickTime - oldTickTime;
-    speed = calculateSpeedKmh(lastTimeDiff);
+    speed = Speed::calculateSpeedKmh(lastTimeDiff);
 }
 
 void Speed::initialize() {
@@ -48,7 +52,7 @@ double Speed::getSpeedKmh() {
 }
 
 double Speed::getDistanceMeters() {
-    double metersFromStartup = tickNr * MM_DISTANCE_PER_REVOLUTION / 1000.0;
+    double metersFromStartup = tickNr * mmDistancePerRevolution / 1000.0;
     return metersFromStartup + persistedTotalDistanceMetersOnStartup;
 }
 
