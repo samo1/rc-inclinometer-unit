@@ -4,6 +4,7 @@
 
 struct PreferencesData {
     unsigned long totalDistanceMeters;
+    double mmDistancePerRevolution;
 };
 
 class Preferences {
@@ -16,4 +17,6 @@ public:
     void initialize();
     void writeTotalDistanceMeters(unsigned long value);
     unsigned long readTotalDistanceMeters();
+    void writeMmDistancePerRevolution(double value);
+    double readMmDistancePerRevolution();
 };

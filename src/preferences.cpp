@@ -18,6 +18,16 @@ unsigned long Preferences::readTotalDistanceMeters() {
     return data.totalDistanceMeters;
 }
 
+void Preferences::writeMmDistancePerRevolution(double value) {
+    data.mmDistancePerRevolution = value;
+    writePrefs();
+}
+
+double Preferences::readMmDistancePerRevolution() {
+    readPrefs();
+    return data.mmDistancePerRevolution;
+}
+
 void Preferences::readPrefs() {
     DEBUG_PRINTLN("Reading preferences");
     int8_t rc = flashPrefs.readPrefs(&data, sizeof(data));

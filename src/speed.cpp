@@ -1,5 +1,6 @@
 #include "speed.h"
 #include "preferences.h"
+#include "statusinfo.h"
 #include <Arduino.h>
 
 #define HALL_SENSOR_DOUT D10
@@ -13,6 +14,8 @@ volatile double speed;
 double Speed::mmDistancePerRevolution = 49.5;
 
 extern Preferences preferences;
+extern StatusInfo statusInfo;
+
 unsigned long persistedTotalDistanceMetersOnStartup;
 unsigned long persistedTotalDistanceMeters;
 
@@ -23,6 +26,9 @@ double Speed::calculateSpeedKmh(unsigned long timeDiffMicros) {
 
 void Speed::setDistancePerRevolution(double mmDistance) {
     mmDistancePerRevolution = mmDistance;
+    statusInfo.setDistancePerRevolution(mmDistance);
+    preferences.writeMmDistancePerRevolution(mmDistance);
+    reset();
 }
 
 void onTick() {
@@ -34,6 +40,11 @@ void onTick() {
 }
 
 void Speed::initialize() {
+    auto mmDistance = preferences.readMmDistancePerRevolution();
+    if (mmDistance > 0) {
+        mmDistancePerRevolution = mmDistance;
+    }
+    statusInfo.setDistancePerRevolution(mmDistancePerRevolution);
     persistedTotalDistanceMetersOnStartup = preferences.readTotalDistanceMeters();
     persistedTotalDistanceMeters = persistedTotalDistanceMetersOnStartup;
     tickNr = 0;

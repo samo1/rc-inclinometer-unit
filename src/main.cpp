@@ -68,6 +68,10 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
         statusInfo.soundDisabled();
     } else if (controlString.equalsIgnoreCase("reset_speed")) {
         Speed::reset();
+    } else if (controlString.startsWith("set_wheel_size ")) {
+        String valueStr = controlString.substring(15);
+        double wheelSize = valueStr.toDouble();
+        Speed::setDistancePerRevolution(wheelSize);
     }
     if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();

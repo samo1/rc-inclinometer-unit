@@ -36,6 +36,12 @@ void StatusInfo::soundDisabled() {
     info[3] = 'D';
 }
 
+void StatusInfo::setDistancePerRevolution(double value) {
+    char buffer[9];
+    sprintf(buffer, "%08.3f", value);
+    info = info.substring(0, 4) + String(buffer);
+}
+
 String StatusInfo::getInfo() {
     previousInfo = info;
     return info;
