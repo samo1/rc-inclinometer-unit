@@ -27,6 +27,7 @@ char const *fds_err_str[] =
         "FDS_ERR_INTERNAL",
 };
 
+ret_code_t fds_init_ret_code = FDS_SUCCESS;
 
 // Static class members
 
@@ -76,7 +77,7 @@ NanoBLEFlashPrefs::NanoBLEFlashPrefs()
     // Registering of the FDS event handler has failed.
   }
 
-  if (fds_init() == FDS_SUCCESS) // Wait for completion
+  if ((fds_init_ret_code = fds_init()) == FDS_SUCCESS) // Wait for completion
   {
     while (!opCompleted)
     {

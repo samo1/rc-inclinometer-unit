@@ -51,7 +51,7 @@ void Bluetooth::updatePitchRoll(PitchRoll pitchRoll) {
     String currentPitchRoll = pitchRoll.toString();
     if (currentPitchRoll.compareTo(previousPitchRoll) != 0) {
         previousPitchRoll = currentPitchRoll;
-        DEBUG_PRINTLN(currentPitchRoll);
+        // DEBUG_PRINTLN(currentPitchRoll);
         if (connected) {
             pitchRollChar.writeValue(currentPitchRoll.substring(0, maxPitchRollCharSize - 1));
         }
@@ -81,7 +81,7 @@ void Bluetooth::updateSpeed(double speed, double distance, unsigned long tickNr)
     String currentSpeed = String(speed, 3) + String(";") + String(tickNr) + String(";") + String(distance, 3);
     if (currentSpeed.compareTo(previousSpeed) != 0) {
         previousSpeed = currentSpeed;
-        DEBUG_PRINTLN(currentSpeed);
+        // DEBUG_PRINTLN(currentSpeed);
         if (connected) {
             speedChar.writeValue(currentSpeed.substring(0, maxSpeedCharSize - 1));
         }

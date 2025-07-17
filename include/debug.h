@@ -1,6 +1,6 @@
 #pragma once
 
-//#define DEBUG
+#include <Arduino.h>
 
 #ifdef DEBUG
 #define DEBUG_INIT Serial.begin(9600); while (!Serial); Serial.println("Started");
