@@ -3,7 +3,7 @@
 #include "statusinfo.h"
 #include <Arduino.h>
 
-#define HALL_SENSOR_DOUT D10
+#define HALL_SENSOR_DOUT D4
 #define HALL_SENSOR_AOUT PIN_A0
 
 volatile unsigned long tickNr;

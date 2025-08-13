@@ -55,7 +55,7 @@ The system is built around a task scheduler (`TaskScheduler`) with the main loop
 ### Hardware Configuration
 
 - **Target**: Arduino Nano 33 BLE (`nano33ble`)
-- **Hall Sensor**: Digital pin D10 (interrupt-driven)
+- **Hall Sensor**: Digital pin D4 (interrupt-driven)
 - **Toggle Switch**: Digital pin D2 with debouncing
 - **Servo**: PWM control for winch motor
 - **Sensors**: LSM9DS1 (accelerometer/gyroscope)

@@ -2,12 +2,14 @@
 #include "debug.h"
 
 #define PWM_PIN D9
+#define CONTROL_PIN_1 D7
+#define CONTROL_PIN_2 D8
 
 void Winch::initialize() {
     DEBUG_PRINTLN("Attaching winch control");
 #ifdef L298N_WINCH_CONTROLLER
-    pinMode(D11, OUTPUT);
-    pinMode(D12, OUTPUT);
+    pinMode(CONTROL_PIN_1, OUTPUT);
+    pinMode(CONTROL_PIN_2, OUTPUT);
     pinMode(PWM_PIN, OUTPUT);
 #else
     servo.attach(PWM_PIN);
@@ -19,8 +21,8 @@ void Winch::initialize() {
 void Winch::stop() {
     DEBUG_PRINTLN("Winch stop");
 #ifdef L298N_WINCH_CONTROLLER
-    digitalWrite(D11, LOW);
-    digitalWrite(D12, LOW);
+    digitalWrite(CONTROL_PIN_1, LOW);
+    digitalWrite(CONTROL_PIN_2, LOW);
     analogWrite(PWM_PIN, 0);
 #else
     servo.write(0);
@@ -32,8 +34,8 @@ void Winch::in() {
     DEBUG_PRINTLN("Winch in");
     if (enabled) {
 #ifdef L298N_WINCH_CONTROLLER
-        digitalWrite(D11, LOW);
-        digitalWrite(D12, HIGH);
+        digitalWrite(CONTROL_PIN_1, LOW);
+        digitalWrite(CONTROL_PIN_2, HIGH);
         analogWrite(PWM_PIN, 255);
 #else
         servo.write(45);
@@ -46,8 +48,8 @@ void Winch::out() {
     DEBUG_PRINTLN("Winch out");
     if (enabled) {
 #ifdef L298N_WINCH_CONTROLLER
-        digitalWrite(D11, HIGH);
-        digitalWrite(D12, LOW);
+        digitalWrite(CONTROL_PIN_1, HIGH);
+        digitalWrite(CONTROL_PIN_2, LOW);
         analogWrite(PWM_PIN, 255);
 #else
         servo.write(135);
