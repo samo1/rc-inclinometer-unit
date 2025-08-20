@@ -5,6 +5,231 @@
 	(uuid "96dfb424-e5e9-404f-ad49-963b0a17b05d")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Memory_EEPROM:CAT24C256"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -6.35 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CAT24C256"
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.cn/PowerSolutions/document/CAT24C256-D.PDF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "256 kb CMOS Serial EEPROM, DIP-8/SOIC-8/TSSOP-8/DFN-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "I2C EEPROM Serial 256kb"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm* SOIC*3.9x4.9mm* TSSOP*4.4x3mm*P0.65mm* DFN*3x2mm*P0.5mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CAT24C256_1_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "WP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_DIP_x01"
 			(pin_names
 				(offset 0)
@@ -1733,6 +1958,12 @@
 		(uuid "17752663-914d-4d0c-99e4-f306cafe30bc")
 	)
 	(junction
+		(at 160.02 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4cfbd766-48de-40ca-96c3-a05ed8302265")
+	)
+	(junction
 		(at 190.5 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1745,10 +1976,22 @@
 		(uuid "5a819857-e7b0-497b-98b5-f4879424a2c7")
 	)
 	(junction
-		(at 187.96 111.76)
+		(at 190.5 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b6c9e4a9-1160-41c8-b3bb-8845654067dc")
+		(uuid "6dce7dcc-9e70-41ee-a999-3cc126bd1a4c")
+	)
+	(junction
+		(at 190.5 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e7738b3-dc3d-4212-85d7-66e6513550e5")
+	)
+	(junction
+		(at 187.96 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9fe34907-9607-47a2-be2d-60ca03d5265a")
 	)
 	(junction
 		(at 161.29 104.14)
@@ -1757,10 +2000,10 @@
 		(uuid "b83251f5-f6fa-4cac-80e9-52b544ac908f")
 	)
 	(junction
-		(at 190.5 109.22)
+		(at 179.07 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bf730b55-5c96-44cf-a89f-3e713b425294")
+		(uuid "cd6477e9-786d-4e10-a823-6aae9915d340")
 	)
 	(junction
 		(at 190.5 91.44)
@@ -1787,6 +2030,16 @@
 			(type default)
 		)
 		(uuid "053deaf4-4988-447e-8963-e12acdcf717c")
+	)
+	(wire
+		(pts
+			(xy 190.5 113.03) (xy 190.5 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09f7ef7c-2d2e-4f93-86ee-29d368a128e2")
 	)
 	(wire
 		(pts
@@ -1840,13 +2093,13 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 111.76) (xy 187.96 116.84)
+			(xy 179.07 73.66) (xy 179.07 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1528c13b-4fa0-4136-bff9-99ec38c867b1")
+		(uuid "136d6a76-8d6d-4887-9cef-d456effe967a")
 	)
 	(wire
 		(pts
@@ -1870,7 +2123,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 111.76) (xy 193.04 111.76)
+			(xy 187.96 115.57) (xy 193.04 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1910,7 +2163,17 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 99.06) (xy 182.88 106.68)
+			(xy 173.99 86.36) (xy 157.48 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c97d428-6762-45e4-b0d5-18b84a179f32")
+	)
+	(wire
+		(pts
+			(xy 182.88 99.06) (xy 182.88 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1920,7 +2183,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 104.14) (xy 163.83 86.36)
+			(xy 163.83 104.14) (xy 163.83 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1970,7 +2233,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 114.3) (xy 166.37 88.9)
+			(xy 166.37 114.3) (xy 166.37 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1980,13 +2243,13 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 91.44) (xy 190.5 109.22)
+			(xy 179.07 73.66) (xy 190.5 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "45b1d077-7340-4fea-ba41-108915e66765")
+		(uuid "43bbb03f-b9dd-48f1-9359-f6ac53feb7c2")
 	)
 	(wire
 		(pts
@@ -2030,6 +2293,26 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 91.44) (xy 193.04 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52510fec-ecdc-40cc-ae94-be2ef889bf9f")
+	)
+	(wire
+		(pts
+			(xy 190.5 96.52) (xy 190.5 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55a0d7dd-2a31-44e7-9cb0-2edb3c6b9ca0")
+	)
+	(wire
+		(pts
 			(xy 193.04 66.04) (xy 186.69 66.04)
 		)
 		(stroke
@@ -2047,6 +2330,16 @@
 			(type default)
 		)
 		(uuid "58d1f108-defd-4121-bfad-7a7e30c79ee2")
+	)
+	(wire
+		(pts
+			(xy 170.18 130.81) (xy 173.99 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a31aae0-bfaa-4308-ab9d-70b796ff716f")
 	)
 	(wire
 		(pts
@@ -2070,7 +2363,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 111.76) (xy 185.42 104.14)
+			(xy 185.42 111.76) (xy 185.42 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2090,13 +2383,33 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 86.36) (xy 193.04 86.36)
+			(xy 170.18 128.27) (xy 170.18 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64f77ed5-a538-49f8-a477-6db65ea4e202")
+	)
+	(wire
+		(pts
+			(xy 163.83 91.44) (xy 190.5 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "666fadbe-9bd9-4f31-9f6a-ed01d1a1eff9")
+	)
+	(wire
+		(pts
+			(xy 173.99 130.81) (xy 173.99 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69cf5688-b925-46d2-a583-f5a4f64ada07")
 	)
 	(wire
 		(pts
@@ -2110,7 +2423,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 109.22) (xy 193.04 109.22)
+			(xy 190.5 113.03) (xy 193.04 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2137,6 +2450,16 @@
 			(type default)
 		)
 		(uuid "712c801e-4f53-4539-b592-b43b46784923")
+	)
+	(wire
+		(pts
+			(xy 160.02 138.43) (xy 179.07 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "737341f2-bb8c-42e9-8e8b-0fc958b0eb36")
 	)
 	(wire
 		(pts
@@ -2170,13 +2493,13 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 109.22) (xy 190.5 119.38)
+			(xy 190.5 96.52) (xy 190.5 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "880f7510-715c-4b5b-bd19-d4b8db9eeaf5")
+		(uuid "88e8f6c2-db05-49da-a337-9d0bc90bc6f4")
 	)
 	(wire
 		(pts
@@ -2190,7 +2513,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 73.66) (xy 190.5 73.66)
+			(xy 157.48 73.66) (xy 179.07 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2210,6 +2533,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 104.14) (xy 161.29 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a114d049-4be5-4eb9-90da-8514e0ac9562")
+	)
+	(wire
+		(pts
 			(xy 127 99.06) (xy 118.11 99.06)
 		)
 		(stroke
@@ -2220,17 +2553,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 71.12) (xy 187.96 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4a6911a-f4c6-471b-85e0-1f62d33587bd")
-	)
-	(wire
-		(pts
-			(xy 190.5 91.44) (xy 193.04 91.44)
+			(xy 190.5 96.52) (xy 193.04 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2250,7 +2573,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 104.14) (xy 193.04 104.14)
+			(xy 185.42 107.95) (xy 193.04 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2260,13 +2583,23 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 104.14) (xy 161.29 104.14)
+			(xy 157.48 104.14) (xy 160.02 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "aaa66268-47f0-4c52-a0c7-7481b961dd51")
+	)
+	(wire
+		(pts
+			(xy 157.48 88.9) (xy 170.18 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b02a3acb-6372-4ab5-9c80-3e1fcb3c6230")
 	)
 	(wire
 		(pts
@@ -2280,13 +2613,23 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 88.9) (xy 193.04 88.9)
+			(xy 166.37 93.98) (xy 193.04 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bcf1bebf-6b9d-4077-97ee-20dabc63a1aa")
+	)
+	(wire
+		(pts
+			(xy 187.96 71.12) (xy 187.96 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd24c3d0-3552-4c4d-a5d2-4851cad3e2e8")
 	)
 	(wire
 		(pts
@@ -2327,6 +2670,16 @@
 			(type default)
 		)
 		(uuid "c59f771a-222e-4e92-b21d-4964cb88445c")
+	)
+	(wire
+		(pts
+			(xy 187.96 115.57) (xy 187.96 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc2af3b7-a749-4b26-a15e-5491d4160d96")
 	)
 	(wire
 		(pts
@@ -2380,7 +2733,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 106.68) (xy 182.88 106.68)
+			(xy 193.04 110.49) (xy 182.88 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2407,6 +2760,16 @@
 			(type default)
 		)
 		(uuid "e6ca7134-ad4f-4615-8853-0d63a21f0648")
+	)
+	(wire
+		(pts
+			(xy 160.02 104.14) (xy 160.02 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7bfecea-1bf6-493b-b59b-ef1bbc33be63")
 	)
 	(wire
 		(pts
@@ -2738,7 +3101,7 @@
 	)
 	(symbol
 		(lib_id "rc-inclinometer-unit-custom-library:Hall effect sensor")
-		(at 205.74 99.06 0)
+		(at 205.74 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2746,7 +3109,7 @@
 		(dnp no)
 		(uuid "6a06bc5d-fa1a-4a1e-b574-cede84d86f64")
 		(property "Reference" "U?"
-			(at 217.17 106.6799 0)
+			(at 217.17 110.4899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2756,7 +3119,7 @@
 			)
 		)
 		(property "Value" "Hall effect sensor"
-			(at 196.85 99.06 0)
+			(at 196.85 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2765,7 +3128,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 99.06 0)
+			(at 205.74 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2774,7 +3137,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 99.06 0)
+			(at 205.74 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2783,7 +3146,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 99.06 0)
+			(at 205.74 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2981,7 +3344,7 @@
 	)
 	(symbol
 		(lib_id "rc-inclinometer-unit-custom-library:Passive buzzer module")
-		(at 199.39 88.9 270)
+		(at 199.39 93.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2989,7 +3352,7 @@
 		(dnp no)
 		(uuid "d70d312f-e90d-4fed-8771-05891f600433")
 		(property "Reference" "U?"
-			(at 207.01 88.9 0)
+			(at 207.01 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2998,7 +3361,7 @@
 			)
 		)
 		(property "Value" "Passive buzzer module"
-			(at 187.96 81.28 90)
+			(at 187.96 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3007,7 +3370,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 204.47 88.9 0)
+			(at 204.47 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,7 +3379,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 88.9 0)
+			(at 204.47 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3025,7 +3388,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 199.39 88.9 0)
+			(at 199.39 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3046,6 +3409,94 @@
 			(project ""
 				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
 					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Memory_EEPROM:CAT24C256")
+		(at 160.02 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dda04fcb-c884-4bcb-a460-4592cb0283fd")
+		(property "Reference" "U2"
+			(at 162.1633 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CAT24C256"
+			(at 162.1633 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.cn/PowerSolutions/document/CAT24C256-D.PDF"
+			(at 160.02 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "256 kb CMOS Serial EEPROM, DIP-8/SOIC-8/TSSOP-8/DFN-8"
+			(at 160.02 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0abda56c-465c-477e-bc82-35b95b24c21a")
+		)
+		(pin "1"
+			(uuid "411e3576-b5ed-49c0-9275-4c349130f93a")
+		)
+		(pin "3"
+			(uuid "8b7c13e5-9ae5-4241-8a1c-173316410a52")
+		)
+		(pin "4"
+			(uuid "bf3f1dcd-0a5b-4fa9-afe1-bfdfc9d64a51")
+		)
+		(pin "5"
+			(uuid "23f842aa-6dcb-4aa1-9b53-8c577772a23d")
+		)
+		(pin "2"
+			(uuid "33a0c2c7-54cc-42a9-b312-9a2a3e555182")
+		)
+		(pin "8"
+			(uuid "9d81afec-3d4a-4b14-8a53-929242836bf6")
+		)
+		(pin "7"
+			(uuid "2108d724-ba84-4906-836b-20f1e14c4949")
+		)
+		(instances
+			(project ""
+				(path "/96dfb424-e5e9-404f-ad49-963b0a17b05d"
+					(reference "U2")
 					(unit 1)
 				)
 			)

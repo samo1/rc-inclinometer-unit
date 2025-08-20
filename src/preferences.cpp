@@ -1,34 +1,16 @@
 #include "preferences.h"
 #include "debug.h"
-#include <NanoBLEFlashPrefs.h>
+#include <serialEEPROM.h>
 
-extern ret_code_t fds_init_ret_code;
+#define EEPROM_I2C_ADDRESS 0x50
+
+serialEEPROM externalEEPROM(EEPROM_I2C_ADDRESS, 32768, 64); // AT24C256
+
+// TODO consider wear-levelling
 
 void Preferences::initialize() {
-    DEBUG_PRINT("FDS init ret code: ");
-    DEBUG_PRINT(fds_init_ret_code);
-    DEBUG_PRINT(" - ");
-    DEBUG_PRINTLN(flashPrefs.errorString(fds_init_ret_code));
-
-    fds_stat_t stats;
-    ret_code_t fds_stat_ret_code = fds_stat(&stats);
-    DEBUG_PRINT("FDS stat ret code: ");
-    DEBUG_PRINT(fds_stat_ret_code);
-    DEBUG_PRINT(" - ");
-    DEBUG_PRINTLN(flashPrefs.errorString(fds_stat_ret_code));
-    static char str[1000];
-    sprintf(str, "%d pages available, %d open records, %d valid records, %d dirty, %d corruption, %d words used, %d freeable words",
-            stats.pages_available,
-            stats.open_records,
-            stats.valid_records,
-            stats.dirty_records,
-            stats.corruption,
-            stats.words_used,
-            stats.freeable_words);
-    DEBUG_PRINTLN(str);
-
+    Wire.begin();
     readPrefs();
-    flashPrefs.garbageCollection();
     writePrefs();
 }
 
@@ -54,18 +36,29 @@ double Preferences::readMmDistancePerRevolution() {
 
 void Preferences::readPrefs() {
     DEBUG_PRINTLN("Reading preferences");
-    int8_t rc = flashPrefs.readPrefs(&data, sizeof(data));
-    if (rc != FDS_SUCCESS) {
-        DEBUG_PRINTLN("No preferences found");
-        DEBUG_PRINTLN(flashPrefs.errorString(rc));
+
+    PreferencesData storedData{};
+    externalEEPROM.read(0, reinterpret_cast<uint8_t *>(&storedData), sizeof(storedData));
+
+    if (storedData.version == data.version && storedData.mmDistancePerRevolution > 0) {
+        memcpy(&data, &storedData, sizeof(storedData));
+        DEBUG_PRINT("Total distance: ");
+        DEBUG_PRINTLN(data.totalDistanceMeters);
+        DEBUG_PRINT("Wheel size: ");
+        DEBUG_PRINTLN(data.mmDistancePerRevolution);
     }
+
+    DEBUG_PRINTLN("Done");
 }
 
 void Preferences::writePrefs() {
     DEBUG_PRINTLN("Writing preferences");
-    int8_t rc = flashPrefs.writePrefs(&data, sizeof(data));
-    if (rc != FDS_SUCCESS) {
-        DEBUG_PRINTLN("Error writing preferences");
-        DEBUG_PRINTLN(flashPrefs.errorString(rc));
-    }
+    DEBUG_PRINT("Total distance: ");
+    DEBUG_PRINTLN(data.totalDistanceMeters);
+    DEBUG_PRINT("Wheel size: ");
+    DEBUG_PRINTLN(data.mmDistancePerRevolution);
+
+    externalEEPROM.write(0, reinterpret_cast<uint8_t *>(&data), sizeof(data));
+
+    DEBUG_PRINTLN("Done");
 }

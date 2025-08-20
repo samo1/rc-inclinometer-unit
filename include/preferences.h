@@ -1,16 +1,14 @@
 #pragma once
 
-#include "NanoBLEFlashPrefs.h"
-
 struct PreferencesData {
-    unsigned long totalDistanceMeters;
-    double mmDistancePerRevolution;
+    int version = 1;
+    unsigned long totalDistanceMeters = 0;
+    double mmDistancePerRevolution = 49.5;
 };
 
 class Preferences {
 private:
     PreferencesData data{};
-    NanoBLEFlashPrefs flashPrefs;
     void readPrefs();
     void writePrefs();
 public:
