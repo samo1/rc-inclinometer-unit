@@ -40,6 +40,9 @@ void Preferences::readPrefs() {
     PreferencesData storedData{};
     externalEEPROM.read(0, reinterpret_cast<uint8_t *>(&storedData), sizeof(storedData));
 
+    DEBUG_PRINT("Stored version: ");
+    DEBUG_PRINTLN(storedData.version);
+
     if (storedData.version == data.version && storedData.mmDistancePerRevolution > 0) {
         memcpy(&data, &storedData, sizeof(storedData));
         DEBUG_PRINT("Total distance: ");

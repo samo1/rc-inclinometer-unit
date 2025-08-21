@@ -47,6 +47,7 @@ static void updateInclineData() {
 }
 
 static void updateWinchControl(const String& controlString, ReceiverCommand receiverCommand) {
+    bool getInfo = false;
     if (controlString != "") {
         DEBUG_PRINT("BLE command '");
         DEBUG_PRINT(controlString);
@@ -72,6 +73,8 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
         String valueStr = controlString.substring(15);
         double wheelSize = valueStr.toDouble();
         Speed::setDistancePerRevolution(wheelSize);
+    } else if (controlString.equalsIgnoreCase("get_info")) {
+        getInfo = true;
     }
     if (receiverCommand == ReceiverCommand::winchStop) {
         winch.stop();
@@ -88,7 +91,7 @@ static void updateWinchControl(const String& controlString, ReceiverCommand rece
             winch.out();
         }
     }
-    if (statusInfo.isChanged()) {
+    if (getInfo || statusInfo.isChanged()) {
         DEBUG_PRINTLN("Status changed");
         bluetooth.updateWinchInfo(statusInfo.getInfo());
     }
