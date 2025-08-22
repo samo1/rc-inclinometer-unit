@@ -35,33 +35,13 @@ double Preferences::readMmDistancePerRevolution() {
 }
 
 void Preferences::readPrefs() {
-    DEBUG_PRINTLN("Reading preferences");
-
     PreferencesData storedData{};
     externalEEPROM.read(0, reinterpret_cast<uint8_t *>(&storedData), sizeof(storedData));
-
-    DEBUG_PRINT("Stored version: ");
-    DEBUG_PRINTLN(storedData.version);
-
     if (storedData.version == data.version && storedData.mmDistancePerRevolution > 0) {
         memcpy(&data, &storedData, sizeof(storedData));
-        DEBUG_PRINT("Total distance: ");
-        DEBUG_PRINTLN(data.totalDistanceMeters);
-        DEBUG_PRINT("Wheel size: ");
-        DEBUG_PRINTLN(data.mmDistancePerRevolution);
     }
-
-    DEBUG_PRINTLN("Done");
 }
 
 void Preferences::writePrefs() {
-    DEBUG_PRINTLN("Writing preferences");
-    DEBUG_PRINT("Total distance: ");
-    DEBUG_PRINTLN(data.totalDistanceMeters);
-    DEBUG_PRINT("Wheel size: ");
-    DEBUG_PRINTLN(data.mmDistancePerRevolution);
-
     externalEEPROM.write(0, reinterpret_cast<uint8_t *>(&data), sizeof(data));
-
-    DEBUG_PRINTLN("Done");
 }
